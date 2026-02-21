@@ -1,0 +1,63 @@
+Copy code
+Html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Golu Gurjar - Personal Website</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+        header {
+            background: #2c3e50;
+            color: white;
+            padding: 20px;
+        }
+        section {
+            padding: 20px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #27ae60;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        footer {
+            background: #2c3e50;
+            color: white;
+            padding: 10px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>Welcome to My Website</h1>
+    <p>I am Golu Gurjar</p>
+</header>
+
+<section>
+    <h2>About Me</h2>
+    <p>I am a BSc student from India and learning web development.</p>
+
+    <h2>Future Plans</h2>
+    <p>Starting my dairy business and building online projects.</p>
+
+    <br>
+    <a href="#" class="btn">Contact Me</a>
+</section>
+
+<footer>
+    <p>© 2026 Golu Gurjar | All Rights Reserved</p>
+</footer>
+
+</body>
+</html>
