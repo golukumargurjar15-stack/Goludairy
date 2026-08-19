@@ -1,125 +1,318 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Golu Dairy | Pure • Fresh • Premium</title>
+<title>Golu Dairy | Pure & Fresh</title>
 
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:Arial,sans-serif;background:#f7f1df;color:#123d2e;line-height:1.7}
-a{text-decoration:none;color:inherit}
-
+body{
+font-family:Arial,sans-serif;
+background:#f7f1df;
+color:#123d2e;
+line-height:1.6
+}
+a{text-decoration:none}
 nav{
-position:sticky;top:0;z-index:20;background:#08291f;color:white;
-padding:18px 7%;display:flex;justify-content:space-between;align-items:center
+position:sticky;
+top:0;
+z-index:100;
+background:#08291f;
+color:white;
+padding:17px 6%;
+display:flex;
+justify-content:space-between;
+align-items:center
 }
-.logo{font-family:Georgia,serif;font-size:30px;font-weight:bold}
+.logo{
+font-family:Georgia,serif;
+font-size:28px;
+font-weight:bold
+}
 .logo span{color:#e6c85c}
-.navlinks{display:flex;gap:20px;font-weight:bold}
-
+nav a{color:white;font-weight:bold}
 .hero{
-min-height:90vh;padding:90px 7%;display:grid;
-grid-template-columns:1fr 1fr;gap:40px;align-items:center;
-background:#0d3b2e;color:white
+min-height:88vh;
+padding:80px 7%;
+background:#0d3b2e;
+color:white;
+display:flex;
+align-items:center
 }
-.badge,.kicker{color:#e6c85c;letter-spacing:6px;font-weight:bold}
-h1{font-family:Georgia,serif;font-size:clamp(55px,8vw,95px);line-height:1}
+.hero-box{max-width:850px}
+.badge{
+color:#e6c85c;
+font-weight:bold;
+letter-spacing:5px
+}
+h1{
+font-family:Georgia,serif;
+font-size:70px;
+line-height:1;
+margin:20px 0
+}
 h1 span,h2 span{color:#e6c85c}
-.hero p{font-size:20px;margin-top:25px;color:#e8eee9}
-.buttons{display:flex;gap:15px;flex-wrap:wrap;margin-top:30px}
+.hero p{
+font-size:20px;
+color:#e6eee9;
+max-width:700px
+}
+.buttons{
+display:flex;
+flex-wrap:wrap;
+gap:14px;
+margin-top:28px
+}
 .btn{
-display:inline-block;padding:14px 25px;border-radius:40px;
-background:#e6c85c;color:#09291f;font-weight:bold;border:1px solid #e6c85c
+display:inline-block;
+padding:14px 24px;
+border-radius:40px;
+background:#e6c85c;
+color:#08291f;
+font-weight:bold;
+border:0;
+cursor:pointer
 }
-.btn.outline{background:transparent;color:white}
-
-.hero-art{
-height:430px;border-radius:40px;background:#124a38;
-display:flex;align-items:center;justify-content:center
+.btn.outline{
+background:transparent;
+color:white;
+border:1px solid white
 }
-.cow{font-size:170px}
-
-section{padding:90px 7%}
+section{padding:80px 7%}
 .center{text-align:center}
-h2{font-family:Georgia,serif;font-size:60px;line-height:1.1;margin:15px 0}
-.section-intro{max-width:700px;margin:auto;color:#66736d;font-size:19px}
+.kicker{
+color:#b08a22;
+font-weight:bold;
+letter-spacing:5px
+}
+h2{
+font-family:Georgia,serif;
+font-size:50px;
+line-height:1.1;
+margin:12px 0
+}
+.intro{
+max-width:700px;
+margin:auto;
+color:#66736d;
+font-size:18px
+}
 
+/* PRODUCTS */
 .products{
-margin-top:45px;display:grid;
-grid-template-columns:repeat(5,1fr);gap:20px
+margin-top:45px;
+display:grid;
+grid-template-columns:repeat(5,1fr);
+gap:18px
 }
 .card{
-background:white;border:1px solid #eadfbf;border-radius:28px;
-padding:25px 18px;display:flex;flex-direction:column;
-box-shadow:0 12px 35px #173c2a12
+background:white;
+padding:25px 18px;
+border-radius:25px;
+box-shadow:0 10px 30px #00000012;
+border:1px solid #eadfbf;
+display:flex;
+flex-direction:column
 }
-.icon{text-align:center;font-size:55px}
-.card h3{text-align:center;font-family:Georgia,serif;font-size:27px}
-.card p{text-align:center;color:#69756f;margin:12px 0}
-.price{text-align:center;font-size:23px;font-weight:bold;color:#9b7916;margin:8px 0 18px}
-.card .btn{text-align:center;margin-top:auto}
+.icon{
+font-size:50px;
+text-align:center
+}
+.card h3{
+font-family:Georgia,serif;
+font-size:25px;
+text-align:center;
+margin:10px 0
+}
+.card p{
+color:#68756e;
+text-align:center;
+font-size:15px
+}
+.price{
+color:#9b7916;
+font-weight:bold;
+font-size:22px;
+text-align:center;
+margin:15px 0
+}
+.card .btn{
+margin-top:auto;
+text-align:center
+}
 
-.promise{background:#efe7d1}
-.promise-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:40px}
-.promise-card{background:white;border-radius:25px;padding:30px;text-align:center}
+/* KANDE */
+.kande{
+background:#eee5cf
+}
+.kande-box{
+max-width:900px;
+margin:40px auto 0;
+background:white;
+border-radius:30px;
+overflow:hidden;
+box-shadow:0 15px 40px #00000015
+}
+.kande-box img{
+width:100%;
+display:block;
+max-height:520px;
+object-fit:cover
+}
+.kande-info{
+padding:30px;
+text-align:center
+}
+.kande-info h3{
+font-family:Georgia,serif;
+font-size:34px
+}
+.kande-info p{
+color:#65716b;
+margin:10px 0 20px
+}
 
+/* OWNER */
 .owner{
-display:grid;grid-template-columns:.9fr 1.1fr;gap:50px;align-items:center
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:50px;
+align-items:center
 }
 .owner img{
-width:100%;max-height:620px;object-fit:cover;border-radius:40px;
-border:8px solid white;box-shadow:0 20px 45px #173c2a22
+width:100%;
+max-height:600px;
+object-fit:cover;
+border-radius:35px;
+border:7px solid white;
+box-shadow:0 15px 40px #0002
 }
-.owner h3{font-size:24px;color:#9b7916;margin-bottom:15px}
-.owner p{font-size:19px;color:#5e6b65}
+.owner h3{
+color:#9b7916;
+margin:10px 0 18px;
+font-size:23px
+}
+.owner p{
+font-size:18px;
+color:#5e6b65
+}
 
-#order{background:#f7f1df}
-.order-box{
-max-width:700px;margin:40px auto;background:white;
-padding:30px;border-radius:30px;box-shadow:0 15px 40px #173c2a15
+/* ORDER */
+.order{
+background:#f1ead8
 }
-.order-box h3{text-align:center;font-family:Georgia,serif;font-size:32px}
-.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px;margin-top:20px}
+.order-box{
+max-width:700px;
+margin:40px auto 0;
+background:white;
+padding:30px;
+border-radius:30px;
+box-shadow:0 15px 40px #0001
+}
+.order-box h3{
+font-family:Georgia,serif;
+font-size:32px;
+text-align:center
+}
+.form{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:14px;
+margin-top:20px
+}
 input,select{
-width:100%;padding:15px;border:1px solid #ddd;border-radius:12px;font-size:16px
+width:100%;
+padding:14px;
+border:1px solid #ddd;
+border-radius:12px;
+font-size:16px
 }
 .full{grid-column:1/-1}
-.total{font-size:22px;font-weight:bold;margin:18px 0}
-
-.contact{background:#0d3b2e;color:white;text-align:center}
-.contact p{color:#e4ebe7;font-size:19px}
-.contact-buttons{justify-content:center}
-.qr{
-background:white;padding:18px;border-radius:25px;
-width:min(360px,90%);margin:40px auto 0
+.total{
+font-size:22px;
+font-weight:bold;
+margin:20px 0
 }
-.qr img{width:100%;display:block}
+.pay{
+background:#075f41;
+color:white;
+width:100%;
+margin-bottom:12px
+}
 
-footer{background:#061f18;color:#b8c7c0;padding:30px;text-align:center}
+/* PAYMENT */
+.payment{
+background:white;
+text-align:center
+}
+.qr-box{
+max-width:430px;
+margin:35px auto 0;
+padding:25px;
+background:#f7f1df;
+border-radius:30px
+}
+.qr-box img{
+width:100%;
+max-width:330px;
+background:white;
+padding:12px;
+border-radius:18px
+}
+.upi{
+font-weight:bold;
+margin-top:12px
+}
+
+/* CONTACT */
+.contact{
+background:#0d3b2e;
+color:white;
+text-align:center
+}
+.contact p{
+color:#dfe8e3;
+font-size:18px
+}
+footer{
+background:#061f18;
+color:#bbc9c3;
+padding:25px;
+text-align:center
+}
 footer a{color:#e6c85c}
-
 .wa{
-position:fixed;right:20px;bottom:20px;width:64px;height:64px;
-border-radius:50%;background:#25d366;color:white;
-display:flex;align-items:center;justify-content:center;
-font-weight:bold;z-index:30
+position:fixed;
+right:20px;
+bottom:20px;
+width:62px;
+height:62px;
+border-radius:50%;
+background:#25d366;
+color:white;
+display:flex;
+align-items:center;
+justify-content:center;
+font-weight:bold;
+z-index:200
 }
 
-@media(max-width:1000px){
+@media(max-width:1050px){
 .products{grid-template-columns:repeat(2,1fr)}
-.hero,.owner{grid-template-columns:1fr}
+.owner{grid-template-columns:1fr}
 }
 @media(max-width:650px){
-.navlinks{display:none}
+nav a{display:none}
 .hero{padding:65px 6%}
+h1{font-size:55px}
+h2{font-size:40px}
 section{padding:65px 6%}
-.products,.promise-grid{grid-template-columns:1fr}
-.form-grid{grid-template-columns:1fr}
+.products{grid-template-columns:1fr}
+.form{grid-template-columns:1fr}
 .full{grid-column:auto}
-h1{font-size:58px}
-h2{font-size:45px}
 }
 </style>
 </head>
@@ -128,202 +321,278 @@ h2{font-size:45px}
 
 <nav>
 <div class="logo">GOLU <span>DAIRY</span></div>
-<div class="navlinks">
-<a href="#home">Home</a>
-<a href="#products">Products</a>
-<a href="#owner">Owner</a>
-<a href="#order">Order</a>
-<a href="#contact">Contact</a>
-</div>
+<a href="#order">Order Now</a>
 </nav>
 
-<section class="hero" id="home">
-<div>
+
+<!-- HERO -->
+
+<section class="hero">
+<div class="hero-box">
+
 <div class="badge">PURE • FRESH • PREMIUM</div>
-<h1>Golu <span>Dairy</span></h1>
-<p>Pure goodness from our farm to your family. Fresh dairy products with care, quality and the trusted taste of home.</p>
+
+<h1>
+Golu <span>Dairy</span>
+</h1>
+
+<p>
+Pure goodness from our farm to your family.
+Fresh dairy products with care, quality and trust.
+</p>
 
 <div class="buttons">
-<a class="btn" href="#order">Order Now</a>
-<a class="btn outline" href="#products">Explore Products</a>
-</div>
+
+<a class="btn" href="#order">
+Order Now
+</a>
+
+<a class="btn outline" href="#products">
+View Products
+</a>
+
 </div>
 
-<div class="hero-art">
-<div class="cow">🐄</div>
 </div>
 </section>
 
 
+<!-- PRODUCTS -->
+
 <section id="products">
+
 <div class="center">
-<div class="kicker">OUR COLLECTION</div>
-<h2>Freshness You <span>Can Trust</span></h2>
-<p class="section-intro">Premium dairy goodness made for everyday family life.</p>
+
+<div class="kicker">OUR PRODUCTS</div>
+
+<h2>
+Freshness You <span>Can Trust</span>
+</h2>
+
+<p class="intro">
+Pure and fresh products for your family.
+</p>
+
 </div>
+
 
 <div class="products">
 
 <div class="card">
 <div class="icon">🥛</div>
 <h3>Fresh Milk</h3>
-<p>Wholesome fresh milk prepared with care and quality.</p>
-<div class="price">₹60 / litre</div>
-<a class="btn" href="#order">Order Milk</a>
+<p>Pure fresh milk.</p>
+<div class="price">₹60 / Litre</div>
+<a class="btn" href="#order">Order</a>
 </div>
 
 <div class="card">
 <div class="icon">🥤</div>
 <h3>Pure Chhach</h3>
-<p>Fresh and refreshing traditional chhach.</p>
-<div class="price">₹40 / litre</div>
-<a class="btn" href="#order">Order Chhach</a>
+<p>Fresh traditional chhach.</p>
+<div class="price">₹40 / Litre</div>
+<a class="btn" href="#order">Order</a>
 </div>
 
 <div class="card">
 <div class="icon">🥣</div>
 <h3>Fresh Dahi</h3>
-<p>Thick, fresh and naturally delicious dahi.</p>
-<div class="price">₹120 / kg</div>
-<a class="btn" href="#order">Order Dahi</a>
+<p>Thick and fresh dahi.</p>
+<div class="price">₹120 / Kg</div>
+<a class="btn" href="#order">Order</a>
 </div>
 
 <div class="card">
 <div class="icon">🧈</div>
 <h3>Pure Ghee</h3>
-<p>Rich and aromatic ghee made with traditional care.</p>
-<div class="price">₹1,500 / kg</div>
-<a class="btn" href="#order">Order Ghee</a>
+<p>Rich traditional ghee.</p>
+<div class="price">₹1,500 / Kg</div>
+<a class="btn" href="#order">Order</a>
 </div>
 
 <div class="card">
 <div class="icon">🐄</div>
-<h3>Cow Dung Kande</h3>
-<p>Natural desi cow-dung kande / upale.</p>
-<div class="price">₹150 / kg</div>
-<a class="btn" href="#order">Order Kande</a>
+<h3>Gobar Kande</h3>
+<p>Natural cow-dung kande.</p>
+<div class="price">₹150 / Kg</div>
+<a class="btn" href="#order">Order</a>
 </div>
 
 </div>
 </section>
 
 
-<section class="promise">
+<!-- KANDE PHOTO -->
+
+<section class="kande">
+
 <div class="center">
-<div class="kicker">OUR PROMISE</div>
-<h2>From Our Farm<br>To Your Family.</h2>
-<p class="section-intro">
-At Golu Dairy, purity comes first. We believe great dairy starts with care —
-from the farm and animals to every product that reaches your home.
+
+<div class="kicker">NATURAL FARM PRODUCT</div>
+
+<h2>
+Gobar Ke <span>Kande</span>
+</h2>
+
+<p class="intro">
+Traditional cow-dung kande made for traditional use.
 </p>
+
 </div>
 
-<div class="promise-grid">
-<div class="promise-card">
-<div class="icon">🌿</div>
-<h3>Pure</h3>
-<p>Carefully made with quality in mind.</p>
-</div>
+<div class="kande-box">
 
-<div class="promise-card">
-<div class="icon">🥛</div>
-<h3>Fresh</h3>
-<p>Family-ready dairy goodness.</p>
-</div>
+<img
+src="golu-dairy-kande.jpg"
+alt="Golu Dairy Gobar Ke Kande"
+onerror="this.style.display='none';">
 
-<div class="promise-card">
-<div class="icon">🤝</div>
-<h3>Trusted</h3>
-<p>Honest service with care.</p>
-</div>
-</div>
-</section>
+<div class="kande-info">
 
-
-<section id="owner">
-<div class="owner">
-
-<img src="owner.jpg" alt="Golu Gurjar - Owner of Golu Dairy">
-
-<div>
-<div class="kicker">MEET THE OWNER</div>
-<h2>Golu Gurjar</h2>
-<h3>Founder & Owner — Golu Dairy</h3>
+<h3>
+Pure Cow Dung Kande
+</h3>
 
 <p>
-Welcome to Golu Dairy. I believe that good dairy begins with purity,
-care and trust. Our aim is to bring fresh, quality dairy goodness
-from our farm to families with an honest commitment to excellence.
+Natural desi cow-dung kande / upale.
+</p>
+
+<div class="price">
+₹150 / Kg
+</div>
+
+<a
+class="btn"
+href="https://wa.me/919024853012?text=Namaste%20Golu%20Dairy,%20mujhe%20gobar%20ke%20kande%20order%20karne%20hain."
+target="_blank">
+Order Kande on WhatsApp
+</a>
+
+</div>
+</div>
+</section>
+
+
+<!-- OWNER -->
+
+<section>
+
+<div class="owner">
+
+<img
+src="owner.jpg"
+alt="Golu Gurjar Owner">
+
+<div>
+
+<div class="kicker">
+MEET THE OWNER
+</div>
+
+<h2>
+Golu Gurjar
+</h2>
+
+<h3>
+Founder & Owner — Golu Dairy
+</h3>
+
+<p>
+Welcome to Golu Dairy. I believe that good dairy
+begins with purity, care and trust. Our aim is to
+bring fresh, quality dairy goodness from our farm
+to families with an honest commitment to excellence.
 </p>
 
 <div class="buttons">
-<a class="btn" href="tel:9024853012">Contact Owner</a>
 
-<a class="btn"
-style="background:transparent;color:#123d2e;border-color:#123d2e"
+<a
+class="btn"
+href="tel:9024853012">
+Call Owner
+</a>
+
+<a
+class="btn"
+style="background:transparent;color:#123d2e;border:1px solid #123d2e"
 href="https://instagram.com/golugurjar3344"
 target="_blank">
 Instagram
 </a>
+
 </div>
+
 </div>
 </div>
 </section>
 
 
-<section id="order">
+<!-- ORDER -->
+
+<section class="order" id="order">
 
 <div class="center">
-<div class="kicker">ORDER ONLINE</div>
-<h2>Choose Your <span>Products</span></h2>
-<p class="section-intro">
-Quantity select karo aur order WhatsApp par direct bhejo.
-</p>
+
+<div class="kicker">
+ONLINE ORDER
 </div>
+
+<h2>
+Place Your <span>Order</span>
+</h2>
+
+<p class="intro">
+Product और quantity चुनें।
+</p>
+
+</div>
+
 
 <div class="order-box">
 
-<h3>Place Your Order</h3>
+<h3>Order Details</h3>
 
-<div class="form-grid">
+<div class="form">
 
-<input id="customer" class="full"
-type="text"
-placeholder="Your name">
+<input
+id="name"
+class="full"
+placeholder="Your Name">
 
-<input id="phone"
-type="tel"
-placeholder="Your mobile number">
+<input
+id="mobile"
+placeholder="Mobile Number">
 
-<input id="address"
-type="text"
-placeholder="Delivery address">
+<input
+id="address"
+placeholder="Delivery Address">
 
 <select id="product">
 
-<option value="Fresh Milk" data-price="60" data-unit="litre">
-Fresh Milk — ₹60/L
+<option value="Milk" data-price="60" data-unit="Litre">
+Milk — ₹60/L
 </option>
 
-<option value="Pure Chhach" data-price="40" data-unit="litre">
-Pure Chhach — ₹40/L
+<option value="Chhach" data-price="40" data-unit="Litre">
+Chhach — ₹40/L
 </option>
 
-<option value="Fresh Dahi" data-price="120" data-unit="kg">
-Fresh Dahi — ₹120/kg
+<option value="Dahi" data-price="120" data-unit="Kg">
+Dahi — ₹120/Kg
 </option>
 
-<option value="Pure Ghee" data-price="1500" data-unit="kg">
-Pure Ghee — ₹1,500/kg
+<option value="Ghee" data-price="1500" data-unit="Kg">
+Ghee — ₹1,500/Kg
 </option>
 
-<option value="Cow Dung Kande" data-price="150" data-unit="kg">
-Cow Dung Kande — ₹150/kg
+<option value="Gobar Kande" data-price="150" data-unit="Kg">
+Gobar Kande — ₹150/Kg
 </option>
 
 </select>
 
-<input id="qty"
+<input
+id="quantity"
 type="number"
 min="1"
 value="1"
@@ -331,59 +600,99 @@ placeholder="Quantity">
 
 </div>
 
+
 <div class="total">
-Estimated Total: ₹<span id="total">60</span>
+Total: ₹<span id="total">60</span>
 </div>
 
-<button class="btn"
-style="width:100%;border:0"
-onclick="sendOrder()">
-Order on WhatsApp
+
+<button
+class="btn pay"
+onclick="payNow()">
+💳 Pay Online
+</button>
+
+
+<button
+class="btn"
+style="width:100%"
+onclick="whatsappOrder()">
+📱 Send Order on WhatsApp
 </button>
 
 </div>
+
 </section>
 
 
-<section class="contact" id="contact">
+<!-- PAYMENT QR -->
 
-<div class="kicker">GET IN TOUCH</div>
+<section class="payment">
+
+<div class="kicker">
+UPI PAYMENT
+</div>
 
 <h2>
-Ready to Taste<br>
-the <span>Difference?</span>
+Pay <span>Online</span>
 </h2>
 
-<p>For orders and enquiries, connect directly with Golu Dairy.</p>
+<p class="intro">
+QR scan karke payment kar sakte hain.
+</p>
 
-<div class="buttons contact-buttons">
 
-<a class="btn"
-href="https://wa.me/919024853012"
-target="_blank">
-WhatsApp 9024853012
-</a>
+<div class="qr-box">
 
-<a class="btn outline"
-href="https://instagram.com/golugurjar3344"
-target="_blank">
-Instagram @golugurjar3344
-</a>
+<img
+src="golu-dairy-payment-qr.jpg"
+alt="Golu Dairy UPI QR"
+onerror="this.style.display='none';">
+
+<div class="upi">
+UPI: 9024853012-1@naviaxis
+</div>
+
+<div>
+KAUSHLYA DEVI
+</div>
 
 </div>
 
-<div class="qr">
+</section>
 
-<img src="payment.jpg"
-alt="Golu Dairy UPI Payment QR">
 
-<p style="color:#123d2e;font-weight:bold;margin-top:10px">
-UPI: 9024853012-1@naviaxis
+<!-- CONTACT -->
+
+<section class="contact">
+
+<div class="kicker">
+GET IN TOUCH
+</div>
+
+<h2>
+Golu <span>Dairy</span>
+</h2>
+
+<p>
+For orders and enquiries contact us.
 </p>
 
-<p style="color:#66736d">
-Pay using any UPI app
-</p>
+<div class="buttons" style="justify-content:center">
+
+<a
+class="btn"
+href="https://wa.me/919024853012"
+target="_blank">
+WhatsApp
+</a>
+
+<a
+class="btn outline"
+href="https://instagram.com/golugurjar3344"
+target="_blank">
+Instagram
+</a>
 
 </div>
 
@@ -392,19 +701,21 @@ Pay using any UPI app
 
 <footer>
 
-<p>© 2026 Golu Dairy • Pure • Fresh • Trusted</p>
+© 2026 Golu Dairy
 
-<p>
-<a href="https://instagram.com/golugurjar3344"
+<br>
+
+<a
+href="https://instagram.com/golugurjar3344"
 target="_blank">
 @golugurjar3344
 </a>
-</p>
 
 </footer>
 
 
-<a class="wa"
+<a
+class="wa"
 href="https://wa.me/919024853012"
 target="_blank">
 WA
@@ -414,59 +725,85 @@ WA
 <script>
 
 const product=document.getElementById("product");
-const qty=document.getElementById("qty");
+const quantity=document.getElementById("quantity");
 const total=document.getElementById("total");
+
 
 function updateTotal(){
 
-const price=
+let price=
 Number(product.options[product.selectedIndex].dataset.price);
 
-const q=
-Math.max(1,Number(qty.value)||1);
+let qty=
+Math.max(1,Number(quantity.value)||1);
 
-total.textContent=
-(price*q).toLocaleString("en-IN");
+total.innerText=
+(price*qty).toLocaleString("en-IN");
 
 }
 
 product.addEventListener("change",updateTotal);
-qty.addEventListener("input",updateTotal);
+quantity.addEventListener("input",updateTotal);
 
 
-function sendOrder(){
+/* UPI PAYMENT */
 
-const name=
-document.getElementById("customer").value.trim();
+function payNow(){
 
-const phone=
-document.getElementById("phone").value.trim();
+let price=
+Number(product.options[product.selectedIndex].dataset.price);
 
-const address=
+let qty=
+Math.max(1,Number(quantity.value)||1);
+
+let amount=price*qty;
+
+let upi=
+"upi://pay?pa=9024853012-1@naviaxis"+
+"&pn=KAUSHLYA%20DEVI"+
+"&am="+amount+
+"&cu=INR";
+
+window.location.href=upi;
+
+}
+
+
+/* WHATSAPP ORDER */
+
+function whatsappOrder(){
+
+let name=
+document.getElementById("name").value.trim();
+
+let mobile=
+document.getElementById("mobile").value.trim();
+
+let address=
 document.getElementById("address").value.trim();
 
-const opt=
+let opt=
 product.options[product.selectedIndex];
 
-const item=opt.value;
+let item=opt.value;
 
-const price=
+let price=
 Number(opt.dataset.price);
 
-const unit=
+let unit=
 opt.dataset.unit;
 
-const q=
-Math.max(1,Number(qty.value)||1);
+let qty=
+Math.max(1,Number(quantity.value)||1);
 
-const amount=
-(price*q).toLocaleString("en-IN");
+let amount=
+(price*qty).toLocaleString("en-IN");
 
 
-if(!name || !phone || !address){
+if(!name || !mobile || !address){
 
 alert(
-"Please enter your name, mobile number and delivery address."
+"Please Name, Mobile Number aur Address bharein."
 );
 
 return;
@@ -474,14 +811,14 @@ return;
 }
 
 
-const message=
+let message=
 "Namaste Golu Dairy!%0A%0A"+
-"I want to place an order:%0A%0A"+
+"New Order:%0A"+
 "Name: "+encodeURIComponent(name)+"%0A"+
-"Mobile: "+encodeURIComponent(phone)+"%0A"+
+"Mobile: "+encodeURIComponent(mobile)+"%0A"+
 "Product: "+encodeURIComponent(item)+"%0A"+
-"Quantity: "+q+" "+encodeURIComponent(unit)+"%0A"+
-"Estimated Total: ₹"+amount+"%0A"+
+"Quantity: "+qty+" "+unit+"%0A"+
+"Total: ₹"+amount+"%0A"+
 "Address: "+encodeURIComponent(address);
 
 
@@ -500,52 +837,6 @@ window.open(
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-80
 
 
 
