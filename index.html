@@ -1,60 +1,633 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
 <title>Golu Dairy | Pure From Our Farm</title>
-<meta name="description" content="Golu Dairy — pure, fresh and premium dairy goodness.">
+
 <style>
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#fbf8ef;color:#173d2a;font-family:Georgia,serif}
-a{text-decoration:none}nav{position:fixed;z-index:10;top:0;left:0;right:0;padding:17px 7%;display:flex;justify-content:space-between;align-items:center;background:rgba(7,32,22,.94);backdrop-filter:blur(12px);color:white}.logo{font-size:25px;font-weight:bold;letter-spacing:1px}.logo span{color:#e2c66b}.navlinks a{color:#fff;font:14px Arial;margin-left:24px}
-.hero{min-height:100vh;padding:125px 7% 70px;display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:38px;color:white;background:linear-gradient(135deg,#071f16,#1b5136)}
-.eyebrow,.tag{font:700 12px Arial;letter-spacing:4px;text-transform:uppercase;color:#e2c66b}.hero h1{font-size:clamp(56px,8vw,100px);line-height:.9;margin:18px 0}.hero h1 span{color:#e2c66b}.hero p{font:17px/1.8 Arial;color:#dfe9e2;max-width:620px}
-.buttons{display:flex;gap:14px;flex-wrap:wrap;margin-top:28px}.btn{padding:14px 23px;border-radius:30px;font:bold 14px Arial}.gold{background:#e2c66b;color:#10271b}.outline{border:1px solid #9ab0a1;color:#fff}
-.art{width:100%;border-radius:30px;box-shadow:0 25px 70px #0005;background:#153e2b}
-section{padding:90px 7%}.center{text-align:center}h2{font-size:clamp(35px,5vw,58px);margin:10px 0 15px}.sub{max-width:650px;margin:auto;font:16px/1.8 Arial;color:#5e6b62}
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:42px}.card{background:#fff;border:1px solid #eadfbe;border-radius:24px;padding:32px;box-shadow:0 15px 40px #173d2a12;transition:.25s}.card:hover{transform:translateY(-7px)}.icon{font-size:45px}.card h3{font-size:25px;margin:10px 0}.card p{font:15px/1.7 Arial;color:#657168}
-.about{display:grid;grid-template-columns:1fr 1fr;gap:55px;align-items:center;background:#efe8d6}.copy{font:16px/1.8 Arial;color:#59665e}.promise{background:#123d2a;color:white;border-radius:28px;padding:45px}.promise p{font:16px/1.8 Arial;color:#dfe9e2}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin-top:30px}.stat{padding:22px;background:#fff;border-radius:16px;text-align:center}.stat b{display:block;font-size:18px;margin-top:5px}
-.cta{text-align:center;background:#123d2a;color:#fff}.cta .copy{color:#dfe9e2;max-width:650px;margin:auto}.float{position:fixed;right:18px;bottom:18px;width:58px;height:58px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:#25d366;color:white;font:bold 18px Arial;box-shadow:0 10px 30px #0004;z-index:20}
-footer{background:#071f16;color:#b8c8be;padding:28px 7%;display:flex;justify-content:space-between;font:14px Arial}
-@media(max-width:800px){.navlinks{display:none}.hero{grid-template-columns:1fr;padding-top:120px}.cards,.about{grid-template-columns:1fr}.stats{grid-template-columns:1fr}section{padding:70px 7%}.art{margin-top:15px}footer{flex-direction:column;gap:10px}}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+
+body{
+margin:0;
+background:#fbf8ef;
+color:#173d2a;
+font-family:Georgia,serif
+}
+
+nav{
+position:fixed;
+top:0;
+left:0;
+right:0;
+z-index:10;
+padding:17px 7%;
+display:flex;
+justify-content:space-between;
+background:#071f16ee;
+color:white
+}
+
+.logo{
+font-size:25px;
+font-weight:bold
+}
+
+.logo span{color:#e2c66b}
+
+nav a{
+color:white;
+text-decoration:none;
+margin-left:20px;
+font:14px Arial
+}
+
+.hero{
+min-height:100vh;
+padding:130px 7% 70px;
+display:grid;
+grid-template-columns:1fr 1fr;
+align-items:center;
+gap:40px;
+color:white;
+background:linear-gradient(135deg,#071f16,#1b5136)
+}
+
+.tag{
+font:700 12px Arial;
+letter-spacing:4px;
+text-transform:uppercase;
+color:#e2c66b
+}
+
+.hero h1{
+font-size:clamp(55px,8vw,100px);
+line-height:.9
+}
+
+.hero h1 span{color:#e2c66b}
+
+.hero p{
+font:17px/1.8 Arial;
+color:#dfe9e2
+}
+
+.buttons{
+display:flex;
+gap:14px;
+flex-wrap:wrap;
+margin-top:25px
+}
+
+.btn{
+padding:14px 23px;
+border-radius:30px;
+font:bold 14px Arial;
+text-decoration:none
+}
+
+.gold{
+background:#e2c66b;
+color:#10271b
+}
+
+.outline{
+border:1px solid #9ab0a1;
+color:white
+}
+
+section{padding:90px 7%}
+
+.center{text-align:center}
+
+h2{
+font-size:clamp(35px,5vw,58px);
+margin:12px 0
+}
+
+.sub{
+max-width:650px;
+margin:auto;
+font:16px/1.8 Arial;
+color:#5e6b62
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:22px;
+margin-top:42px
+}
+
+.card{
+background:white;
+border:1px solid #eadfbe;
+border-radius:24px;
+padding:32px;
+box-shadow:0 15px 40px #173d2a12
+}
+
+.icon{font-size:45px}
+
+.card h3{
+font-size:25px
+}
+
+.card p{
+font:15px/1.7 Arial;
+color:#657168
+}
+
+.about{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:55px;
+align-items:center;
+background:#efe8d6
+}
+
+.copy{
+font:16px/1.8 Arial;
+color:#59665e
+}
+
+.promise{
+background:#123d2a;
+color:white;
+border-radius:28px;
+padding:45px
+}
+
+.stats{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:15px;
+margin-top:30px
+}
+
+.stat{
+padding:20px;
+background:white;
+border-radius:16px;
+text-align:center
+}
+
+.stat b{
+display:block;
+font-size:18px;
+margin-top:5px
+}
+
+/* OWNER */
+
+.owner{
+background:#f7f2e5
+}
+
+.owner-photo{
+width:100%;
+max-width:430px;
+display:block;
+margin:auto;
+border-radius:30px;
+border:7px solid white;
+box-shadow:0 25px 60px #173d2a30
+}
+
+.owner-title{
+font:700 17px Arial;
+color:#8b6d25
+}
+
+.cta{
+text-align:center;
+background:#123d2a;
+color:white
+}
+
+.cta .copy{
+color:#dfe9e2;
+max-width:650px;
+margin:auto
+}
+
+footer{
+background:#071f16;
+color:#b8c8be;
+padding:28px 7%;
+display:flex;
+justify-content:space-between;
+font:14px Arial
+}
+
+footer a{
+color:#e2c66b
+}
+
+.float{
+position:fixed;
+right:18px;
+bottom:18px;
+width:58px;
+height:58px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+background:#25d366;
+color:white;
+font:bold 16px Arial;
+z-index:20
+}
+
+@media(max-width:800px){
+
+nav .links{display:none}
+
+.hero{
+grid-template-columns:1fr;
+padding-top:120px
+}
+
+.cards,
+.about{
+grid-template-columns:1fr
+}
+
+.stats{
+grid-template-columns:1fr
+}
+
+section{
+padding:70px 7%
+}
+
+footer{
+flex-direction:column;
+gap:10px
+}
+}
 </style>
 </head>
+
 <body>
-<nav><div class="logo">GOLU <span>DAIRY</span></div><div class="navlinks"><a href="#home">Home</a><a href="#products">Products</a><a href="#farm">Our Farm</a><a href="#contact">Contact</a></div></nav>
+
+<nav>
+
+<div class="logo">
+GOLU <span>DAIRY</span>
+</div>
+
+<div class="links">
+<a href="#home">Home</a>
+<a href="#products">Products</a>
+<a href="#farm">Our Farm</a>
+<a href="#owner">Owner</a>
+<a href="#contact">Contact</a>
+</div>
+
+</nav>
+
+
+<!-- HERO -->
 
 <section id="home" class="hero">
-<div><div class="eyebrow">Pure • Fresh • Premium</div><h1>Golu <span>Dairy</span></h1><p>Pure goodness from our farm to your family. Fresh dairy products with care, quality and the trusted taste of home.</p>
-<div class="buttons"><a class="btn gold" href="https://wa.me/919024853012?text=Hello%20Golu%20Dairy%2C%20I%20want%20to%20place%20an%20order." target="_blank">Order on WhatsApp</a><a class="btn outline" href="#products">Explore Products</a></div></div>
-<svg class="art" viewBox="0 0 900 560" xmlns="http://www.w3.org/2000/svg" aria-label="Golu Dairy farm illustration">
-<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#0b2d20"/><stop offset="1" stop-color="#2b6847"/></linearGradient></defs>
-<rect width="900" height="560" rx="42" fill="url(#g)"/><circle cx="700" cy="130" r="90" fill="#e8cc70" opacity=".18"/>
-<path d="M0 410Q170 330 330 405T680 390T900 360V560H0Z" fill="#174a32"/><path d="M0 460Q210 390 390 455T900 420V560H0Z" fill="#0c3625"/>
-<g transform="translate(245 170)"><ellipse cx="235" cy="180" rx="170" ry="105" fill="#f7f2df"/><ellipse cx="390" cy="150" rx="78" ry="68" fill="#f7f2df"/>
-<path d="M330 90Q300 30 350 18Q382 48 388 86M448 92Q480 36 522 45Q500 91 464 111" stroke="#f7f2df" stroke-width="28" fill="none"/>
-<ellipse cx="405" cy="165" rx="10" ry="13" fill="#173d2a"/><ellipse cx="453" cy="165" rx="10" ry="13" fill="#173d2a"/><ellipse cx="429" cy="195" rx="38" ry="24" fill="#e8d6b5"/>
-<circle cx="414" cy="194" r="5" fill="#4c3827"/><circle cx="445" cy="194" r="5" fill="#4c3827"/>
-<path d="M190 95Q245 160 205 225" stroke="#b9a27a" stroke-width="38" fill="none" opacity=".65"/>
-<path d="M120 230V335M205 245V345M320 245V345M405 220V330" stroke="#f7f2df" stroke-width="28" stroke-linecap="round"/>
-<path d="M50 195Q5 125 55 90M55 90Q10 60 45 25" stroke="#f7f2df" stroke-width="24" fill="none" stroke-linecap="round"/></g>
-<text x="55" y="82" fill="#f1d887" font-family="Georgia" font-size="34" letter-spacing="6">GOLU DAIRY</text></svg>
+
+<div>
+
+<div class="tag">
+Pure • Fresh • Premium
+</div>
+
+<h1>
+Golu <span>Dairy</span>
+</h1>
+
+<p>
+Pure goodness from our farm to your family.
+Fresh dairy products with care, quality and
+the trusted taste of home.
+</p>
+
+<div class="buttons">
+
+<a class="btn gold"
+href="https://wa.me/919024853012"
+target="_blank">
+Order on WhatsApp
+</a>
+
+<a class="btn outline"
+href="#products">
+Explore Products
+</a>
+
+</div>
+
+</div>
+
+<div>
+
+<div style="
+background:#153e2b;
+border-radius:30px;
+padding:70px 20px;
+text-align:center;
+font-size:110px;
+box-shadow:0 25px 70px #0005">
+🐄
+</div>
+
+</div>
+
 </section>
 
-<section id="products" class="center"><div class="tag">Our Collection</div><h2>Freshness You Can Trust</h2><p class="sub">Premium dairy goodness made for everyday family life.</p>
-<div class="cards"><article class="card"><div class="icon">🥛</div><h3>Fresh Milk</h3><p>Wholesome fresh milk prepared with care and a commitment to quality.</p></article>
-<article class="card"><div class="icon">🧈</div><h3>Pure Ghee</h3><p>Traditional richness for cooking, sweets and special family meals.</p></article>
-<article class="card"><div class="icon">🍶</div><h3>Dairy Goodness</h3><p>Fresh dairy products with the simple promise of quality.</p></article></div></section>
 
-<section id="farm" class="about"><div><div class="tag">Our Promise</div><h2>From Our Farm<br>To Your Family.</h2><p class="copy">At Golu Dairy, purity comes first. We believe great dairy starts with care — from the farm and animals to every product that reaches your home.</p>
-<div class="stats"><div class="stat">🌿<b>Pure</b>Carefully made</div><div class="stat">🥛<b>Fresh</b>Family ready</div><div class="stat">🤝<b>Trusted</b>With care</div></div></div>
-<div class="promise"><div style="font-size:70px">🐄</div><h2 style="font-size:40px">Pure by Nature</h2><p>Freshness, care and honest quality — the values behind Golu Dairy.</p></div></section>
+<!-- PRODUCTS -->
 
-<section id="contact" class="cta"><div class="tag">Get In Touch</div><h2>Ready to Taste the Difference?</h2><p class="copy">For orders and enquiries, connect directly with Golu Dairy.</p><div class="buttons" style="justify-content:center"><a class="btn gold" href="https://wa.me/919024853012" target="_blank">WhatsApp 9024853012</a><a class="btn outline" href="https://www.instagram.com/golugurjar3344" target="_blank">Instagram @golugurjar3344</a></div></section>
-<footer><span>© 2026 Golu Dairy</span><a style="color:#e2c66b" href="https://www.instagram.com/golugurjar3344" target="_blank">@golugurjar3344</a></footer>
-<a class="float" href="https://wa.me/919024853012" target="_blank">WA</a>
-</body></html>
+<section id="products" class="center">
+
+<div class="tag">
+Our Collection
+</div>
+
+<h2>
+Freshness You Can Trust
+</h2>
+
+<p class="sub">
+Premium dairy goodness made for everyday family life.
+</p>
 
 
+<div class="cards">
+
+<div class="card">
+<div class="icon">🥛</div>
+<h3>Fresh Milk</h3>
+<p>
+Wholesome fresh milk prepared with care
+and a commitment to quality.
+</p>
+</div>
+
+
+<div class="card">
+<div class="icon">🧈</div>
+<h3>Pure Ghee</h3>
+<p>
+Traditional richness for cooking,
+sweets and special family meals.
+</p>
+</div>
+
+
+<div class="card">
+<div class="icon">🍶</div>
+<h3>Dairy Goodness</h3>
+<p>
+Fresh dairy products with the simple
+promise of quality.
+</p>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- FARM -->
+
+<section id="farm" class="about">
+
+<div>
+
+<div class="tag">
+Our Promise
+</div>
+
+<h2>
+From Our Farm<br>
+To Your Family.
+</h2>
+
+<p class="copy">
+At Golu Dairy, purity comes first.
+We believe great dairy starts with care —
+from the farm and animals to every
+product that reaches your home.
+</p>
+
+<div class="stats">
+
+<div class="stat">
+🌿
+<b>Pure</b>
+Carefully made
+</div>
+
+<div class="stat">
+🥛
+<b>Fresh</b>
+Family ready
+</div>
+
+<div class="stat">
+🤝
+<b>Trusted</b>
+With care
+</div>
+
+</div>
+
+</div>
+
+
+<div class="promise">
+
+<div style="font-size:70px">
+🐄
+</div>
+
+<h2 style="font-size:40px">
+Pure by Nature
+</h2>
+
+<p class="copy" style="color:white">
+Freshness, care and honest quality —
+the values behind Golu Dairy.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- OWNER -->
+
+<section id="owner" class="about owner">
+
+<div>
+
+<img
+src="owner.jpg"
+class="owner-photo"
+alt="Golu Gurjar - Founder and Owner of Golu Dairy"
+>
+
+</div>
+
+
+<div>
+
+<div class="tag">
+Meet the Owner
+</div>
+
+<h2>
+Golu Gurjar
+</h2>
+
+<h3 class="owner-title">
+Founder & Owner — Golu Dairy
+</h3>
+
+<p class="copy">
+Welcome to Golu Dairy.
+
+I believe that good dairy begins with
+purity, care and trust.
+
+Our aim is to bring fresh, quality dairy
+goodness from our farm to families with
+an honest commitment to excellence.
+</p>
+
+
+<div class="buttons">
+
+<a class="btn gold"
+href="https://wa.me/919024853012"
+target="_blank">
+Contact Owner
+</a>
+
+<a class="btn"
+style="border:1px solid #173d2a;color:#173d2a"
+href="https://www.instagram.com/golugurjar3344"
+target="_blank">
+Instagram
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section id="contact" class="cta">
+
+<div class="tag">
+Get In Touch
+</div>
+
+<h2>
+Ready to Taste the Difference?
+</h2>
+
+<p class="copy">
+For orders and enquiries, connect directly
+with Golu Dairy.
+</p>
+
+<div class="buttons"
+style="justify-content:center">
+
+<a class="btn gold"
+href="https://wa.me/919024853012"
+target="_blank">
+WhatsApp 9024853012
+</a>
+
+<a class="btn outline"
+href="https://www.instagram.com/golugurjar3344"
+target="_blank">
+Instagram @golugurjar3344
+</a>
+
+</div>
+
+</section>
+
+
+<footer>
+
+<span>
+© 2026 Golu Dairy
+</span>
+
+<a href="https://www.instagram.com/golugurjar3344"
+target="_blank">
+@golugurjar3344
+</a>
+
+</footer>
+
+
+<a class="float"
+href="https://wa.me/919024853012"
+target="_blank">
+WA
+</a>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+80
 
 
 
