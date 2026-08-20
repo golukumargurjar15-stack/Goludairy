@@ -1,674 +1,973 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<meta name="theme-color" content="#06150d">
-<title>Golu Dairy | Pure & Fresh</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Golu Dairy | Pure • Fresh • Premium</title>
 
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{
-font-family:Arial,sans-serif;background:#06150d;color:#fff;
-overflow-x:hidden
-}
-:root{
---gold:#e4c35a;
---dark:#06150d;
---card:#0b2419;
---text:#f7f1df;
---muted:#aab7b0
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
 }
 
-/* TOP BAR */
-.nav{
-position:fixed;top:0;left:0;width:100%;height:70px;
-z-index:1000;display:flex;align-items:center;
-justify-content:space-between;padding:0 6%;
-background:rgba(3,15,9,.78);
-backdrop-filter:blur(16px);
-border-bottom:1px solid rgba(228,195,90,.25)
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:Arial,sans-serif;
+  background:#f8f3e5;
+  color:#123d2e;
+  overflow-x:hidden;
+}
+
+a{
+  text-decoration:none;
+}
+
+/* ================= NAVBAR ================= */
+
+nav{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  z-index:999;
+  height:75px;
+  padding:0 6%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background:rgba(5,31,23,.94);
+  backdrop-filter:blur(15px);
+  border-bottom:1px solid rgba(230,200,92,.25);
 }
 
 .logo{
-font-size:24px;font-weight:900;letter-spacing:1px
+  font-family:Georgia,serif;
+  font-size:27px;
+  font-weight:bold;
+  color:white;
 }
-.logo span{color:var(--gold)}
 
-.menu{
-width:46px;height:46px;border-radius:50%;
-background:transparent;border:1px solid var(--gold);
-display:flex;flex-direction:column;
-justify-content:center;align-items:center;
-gap:5px;cursor:pointer
+.logo span{
+  color:#e6c85c;
 }
-.menu span{
-width:21px;height:2px;background:var(--gold)
+
+/* THREE LINE MENU */
+
+.menu-btn{
+  width:45px;
+  height:42px;
+  border:1px solid #e6c85c;
+  border-radius:10px;
+  background:transparent;
+  cursor:pointer;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  gap:5px;
+}
+
+.menu-btn span{
+  width:23px;
+  height:2px;
+  background:#e6c85c;
+  transition:.3s;
+}
+
+.menu-btn.active span:nth-child(1){
+  transform:translateY(7px) rotate(45deg);
+}
+
+.menu-btn.active span:nth-child(2){
+  opacity:0;
+}
+
+.menu-btn.active span:nth-child(3){
+  transform:translateY(-7px) rotate(-45deg);
 }
 
 /* MENU */
-.drawer{
-position:fixed;right:-320px;top:0;
-width:300px;height:100vh;
-z-index:1100;background:#071b12;
-padding:95px 28px 30px;
-transition:.35s;
-border-left:1px solid rgba(228,195,90,.4);
-box-shadow:-20px 0 60px #0008
-}
-.drawer.open{right:0}
 
-.drawer a{
-display:block;text-decoration:none;color:#fff;
-padding:16px 0;border-bottom:1px solid #ffffff12;
-font-size:17px
-}
-.drawer a:hover{color:var(--gold)}
-
-.login-link{
-color:var(--gold)!important;
-font-weight:bold
+.mobile-menu{
+  position:fixed;
+  top:75px;
+  right:-100%;
+  width:300px;
+  min-height:calc(100vh - 75px);
+  background:#08291f;
+  z-index:998;
+  padding:35px 25px;
+  transition:.4s;
+  box-shadow:-15px 20px 50px #0005;
 }
 
-/* HERO */
+.mobile-menu.show{
+  right:0;
+}
+
+.mobile-menu a{
+  display:block;
+  color:white;
+  padding:17px 10px;
+  border-bottom:1px solid #ffffff18;
+  font-weight:bold;
+}
+
+.login-menu{
+  margin-top:20px;
+  background:#e6c85c;
+  color:#08291f!important;
+  border-radius:30px;
+  text-align:center;
+  border:0!important;
+}
+
+/* ================= HERO ================= */
+
 .hero{
-height:100vh;
-min-height:650px;
-position:relative;
-overflow:hidden;
-display:flex;
-align-items:center;
-padding:90px 7%
+  min-height:100vh;
+  padding:130px 7% 80px;
+  display:flex;
+  align-items:center;
+  position:relative;
+  overflow:hidden;
+  background:
+  radial-gradient(circle at 85% 20%,#e6c85c22,transparent 30%),
+  linear-gradient(135deg,#061f18,#0d3b2e 55%,#08291f);
+  color:white;
 }
 
-.hero video{
-position:absolute;
-inset:0;
-width:100%;
-height:100%;
-object-fit:cover;
-z-index:0;
-background:#06150d
+.hero:before{
+  content:"";
+  position:absolute;
+  width:400px;
+  height:400px;
+  border:1px solid #e6c85c33;
+  border-radius:50%;
+  right:-120px;
+  top:100px;
+  animation:spin 15s linear infinite;
 }
 
-.hero-overlay{
-position:absolute;
-inset:0;
-z-index:1;
-background:
-linear-gradient(90deg,
-rgba(3,14,8,.92),
-rgba(3,14,8,.55),
-rgba(3,14,8,.15)),
-linear-gradient(0deg,#06150d,transparent 40%)
+.hero-box{
+  max-width:850px;
+  position:relative;
+  z-index:2;
 }
 
-.hero-content{
-position:relative;
-z-index:2;
-max-width:700px
+.badge{
+  color:#e6c85c;
+  font-weight:bold;
+  letter-spacing:5px;
+  animation:fadeUp 1s ease;
 }
 
-.hero-small{
-color:var(--gold);
-font-size:12px;
-letter-spacing:5px;
-font-weight:bold
+h1{
+  font-family:Georgia,serif;
+  font-size:clamp(55px,9vw,100px);
+  line-height:.95;
+  margin:25px 0;
+  animation:fadeUp 1.2s ease;
 }
 
-.hero h1{
-font-size:clamp(55px,10vw,105px);
-line-height:.88;
-margin:20px 0
+h1 span,
+h2 span{
+  color:#e6c85c;
 }
-
-.hero h1 span{color:var(--gold)}
 
 .hero p{
-color:#dce3df;
-font-size:18px;
-line-height:1.7;
-max-width:600px
+  max-width:700px;
+  color:#dbe7e0;
+  font-size:20px;
+  animation:fadeUp 1.4s ease;
+}
+
+.buttons{
+  display:flex;
+  flex-wrap:wrap;
+  gap:14px;
+  margin-top:30px;
 }
 
 .btn{
-display:inline-block;
-padding:14px 24px;
-border-radius:30px;
-border:0;
-cursor:pointer;
-font-weight:bold;
-text-decoration:none;
-margin:18px 7px 0 0;
-transition:.3s
+  display:inline-block;
+  padding:14px 25px;
+  border-radius:40px;
+  background:#e6c85c;
+  color:#08291f;
+  font-weight:bold;
+  border:none;
+  cursor:pointer;
+  transition:.3s;
 }
 
 .btn:hover{
-transform:translateY(-3px)
+  transform:translateY(-4px);
+  box-shadow:0 12px 25px #e6c85c33;
 }
 
-.gold{
-background:var(--gold);
-color:#07140d
+.btn.outline{
+  background:transparent;
+  color:white;
+  border:1px solid white;
 }
 
-.outline{
-background:transparent;
-color:#fff;
-border:1px solid #ffffff55
+/* ================= SECTIONS ================= */
+
+section{
+  padding:90px 7%;
 }
 
-/* COMMON */
-section{padding:90px 7%}
-
-.title{
-text-align:center;
-margin-bottom:45px
+.center{
+  text-align:center;
 }
 
-.title small{
-color:var(--gold);
-letter-spacing:4px
+.kicker{
+  color:#ad861d;
+  font-weight:bold;
+  letter-spacing:5px;
 }
 
-.title h2{
-font-size:clamp(38px,6vw,58px);
-margin:10px 0
+h2{
+  font-family:Georgia,serif;
+  font-size:clamp(40px,6vw,60px);
+  line-height:1.1;
+  margin:12px 0;
 }
 
-.title p{color:var(--muted)}
-
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:22px
+.intro{
+  max-width:700px;
+  margin:auto;
+  color:#68756e;
+  font-size:18px;
 }
 
-/* CARDS */
+/* ================= PRODUCTS ================= */
+
+.products{
+  margin-top:50px;
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:18px;
+}
+
 .card{
-background:linear-gradient(145deg,#0c2c1d,#071a11);
-border:1px solid rgba(228,195,90,.2);
-border-radius:24px;
-overflow:hidden;
-transition:.35s
+  background:white;
+  padding:28px 18px;
+  border-radius:25px;
+  border:1px solid #eadfbf;
+  box-shadow:0 15px 35px #0000000d;
+  transition:.4s;
 }
 
 .card:hover{
-transform:translateY(-7px);
-border-color:rgba(228,195,90,.7)
+  transform:translateY(-10px);
+  box-shadow:0 25px 50px #0002;
 }
 
-.card-image{
-height:225px;
-background-position:center;
-background-size:cover;
-background-color:#10271c
+.icon{
+  font-size:50px;
+  text-align:center;
 }
 
-/*
-YOUR OWN PHOTOS:
-cow.jpg
-buffalo.jpg
-kande.jpg
-*/
-.cow-image{
-background-image:url("cow.jpg")
+.card h3{
+  font-family:Georgia,serif;
+  text-align:center;
+  font-size:24px;
+  margin:10px 0;
 }
 
-.buffalo-image{
-background-image:url("buffalo.jpg")
-}
-
-.kande-image{
-background-image:url("kande.jpg")
-}
-
-.milk-image{
-background-image:url("milk.jpg")
-}
-
-.chhach-image{
-background-image:url("chhach.jpg")
-}
-
-.dahi-image{
-background-image:url("dahi.jpg")
-}
-
-.ghee-image{
-background-image:url("ghee.jpg")
-}
-
-.card-body{
-padding:22px
-}
-
-.card-body h3{
-font-size:22px;
-margin-bottom:8px
-}
-
-.card-body p{
-color:var(--muted);
-line-height:1.6
+.card p{
+  color:#68756e;
+  text-align:center;
 }
 
 .price{
-color:var(--gold);
-font-size:21px;
-font-weight:bold;
-margin:13px 0
+  color:#9b7916;
+  font-size:22px;
+  font-weight:bold;
+  text-align:center;
+  margin:15px 0;
 }
 
-/* ORDER */
+.card .btn{
+  width:100%;
+  text-align:center;
+}
+
+/* ================= KANDE ================= */
+
+.kande{
+  background:#eee5cf;
+}
+
+.kande-box{
+  max-width:900px;
+  margin:45px auto 0;
+  background:white;
+  border-radius:30px;
+  overflow:hidden;
+  box-shadow:0 20px 50px #0002;
+}
+
+.kande-box img{
+  width:100%;
+  max-height:500px;
+  object-fit:cover;
+  display:block;
+}
+
+.kande-info{
+  padding:30px;
+  text-align:center;
+}
+
+.kande-info h3{
+  font-family:Georgia,serif;
+  font-size:35px;
+}
+
+/* ================= OWNER ================= */
+
+.owner{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:60px;
+  align-items:center;
+}
+
+.owner img{
+  width:100%;
+  max-height:600px;
+  object-fit:cover;
+  border-radius:35px;
+  border:7px solid white;
+  box-shadow:0 20px 50px #0002;
+}
+
+.owner h3{
+  color:#9b7916;
+  margin:15px 0;
+  font-size:23px;
+}
+
+.owner p{
+  color:#5e6b65;
+  font-size:18px;
+}
+
+/* ================= ORDER ================= */
+
+.order{
+  background:#f1ead8;
+}
+
 .order-box{
-max-width:680px;
-margin:auto;
-padding:30px;
-background:#0b291b;
-border:1px solid rgba(228,195,90,.3);
-border-radius:26px
+  max-width:700px;
+  margin:45px auto 0;
+  background:white;
+  padding:35px;
+  border-radius:30px;
+  box-shadow:0 20px 50px #0002;
 }
 
-label{
-display:block;
-margin:14px 0 6px;
-color:#dce4df
+.order-box h3{
+  font-family:Georgia,serif;
+  font-size:32px;
+  text-align:center;
 }
 
-input,select{
-width:100%;
-padding:14px;
-border-radius:10px;
-border:1px solid #ffffff20;
-background:#06150d;
-color:#fff;
-outline:none
+.form{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+  margin-top:25px;
+}
+
+input,
+select{
+  width:100%;
+  padding:15px;
+  border:1px solid #ddd;
+  border-radius:12px;
+  font-size:16px;
+}
+
+.full{
+  grid-column:1/-1;
 }
 
 .total{
-font-size:25px;
-font-weight:bold;
-color:var(--gold);
-margin:20px 0
+  font-size:23px;
+  font-weight:bold;
+  margin:22px 0;
 }
 
-/* OWNER */
-.about{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:55px;
-align-items:center
+.pay{
+  background:#075f41;
+  color:white;
+  width:100%;
+  margin-bottom:12px;
 }
 
-.owner-image{
-height:470px;
-border-radius:30px;
-background:url("owner.jpg") center/cover;
-border:1px solid rgba(228,195,90,.4)
+/* ================= PAYMENT ================= */
+
+.payment{
+  background:white;
+  text-align:center;
 }
 
-.about-text small{
-color:var(--gold);
-letter-spacing:4px
+.qr-box{
+  max-width:430px;
+  margin:40px auto;
+  padding:25px;
+  background:#f7f1df;
+  border-radius:30px;
 }
 
-.about-text h2{
-font-size:50px;
-margin:15px 0
+.qr-box img{
+  width:100%;
+  max-width:330px;
+  border-radius:18px;
 }
 
-.about-text p{
-color:var(--muted);
-line-height:1.9
+.upi{
+  font-weight:bold;
+  margin-top:15px;
 }
 
-/* PAYMENT */
-.payment{text-align:center}
+/* ================= CONTACT ================= */
 
-.scanner{
-width:min(330px,90%);
-margin:25px auto;
-padding:15px;
-background:#fff;
-border-radius:22px
+.contact{
+  background:#0d3b2e;
+  color:white;
+  text-align:center;
 }
 
-.scanner img{
-display:block;
-width:100%
+.contact p{
+  color:#dfe8e3;
+  font-size:18px;
 }
 
-/* LOGIN */
-.modal{
-position:fixed;
-inset:0;
-z-index:3000;
-background:#000b;
-display:none;
-align-items:center;
-justify-content:center;
-padding:20px
+/* ================= FOOTER ================= */
+
+footer{
+  background:#061f18;
+  color:#bbc9c3;
+  text-align:center;
+  padding:28px;
 }
 
-.modal.show{display:flex}
+footer a{
+  color:#e6c85c;
+}
+
+/* ================= WHATSAPP ================= */
+
+.wa{
+  position:fixed;
+  right:20px;
+  bottom:20px;
+  width:62px;
+  height:62px;
+  border-radius:50%;
+  background:#25d366;
+  color:white;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:bold;
+  z-index:900;
+  box-shadow:0 10px 25px #0003;
+}
+
+/* ================= LOGIN MODAL ================= */
+
+.login-overlay{
+  position:fixed;
+  inset:0;
+  background:#0009;
+  backdrop-filter:blur(8px);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  z-index:2000;
+  padding:20px;
+}
+
+.login-overlay.show{
+  display:flex;
+}
 
 .login-box{
-width:min(420px,100%);
-background:#0a2518;
-border:1px solid rgba(228,195,90,.5);
-border-radius:25px;
-padding:30px;
-box-shadow:0 30px 90px #000
-}
-
-.close{
-float:right;
-background:none;
-border:0;
-color:#fff;
-font-size:27px;
-cursor:pointer
+  width:100%;
+  max-width:430px;
+  background:white;
+  border-radius:30px;
+  padding:35px;
+  position:relative;
+  box-shadow:0 30px 80px #0005;
+  animation:pop .35s ease;
 }
 
 .login-box h2{
-font-size:32px;
-margin-bottom:8px
+  font-size:38px;
+  text-align:center;
 }
 
 .login-box p{
-color:var(--muted);
-margin-bottom:20px
+  text-align:center;
+  color:#68756e;
 }
 
-/* FOOTER */
-footer{
-padding:45px 7%;
-text-align:center;
-border-top:1px solid #ffffff10;
-color:#8c9993
+.login-box input{
+  margin-top:12px;
 }
 
-/* WHATSAPP */
-.whatsapp{
-position:fixed;
-right:20px;
-bottom:20px;
-z-index:900;
-width:60px;
-height:60px;
-border-radius:50%;
-background:#20d46b;
-color:#fff;
-display:flex;
-align-items:center;
-justify-content:center;
-text-decoration:none;
-font-size:25px;
-box-shadow:0 10px 30px #20d46b55
+.login-box .btn{
+  width:100%;
+  margin-top:15px;
+}
+
+.close-login{
+  position:absolute;
+  right:18px;
+  top:15px;
+  border:0;
+  background:none;
+  font-size:30px;
+  cursor:pointer;
+}
+
+/* ================= ANIMATION ================= */
+
+.reveal{
+  opacity:0;
+  transform:translateY(40px);
+  transition:1s;
+}
+
+.reveal.active{
+  opacity:1;
+  transform:translateY(0);
+}
+
+@keyframes fadeUp{
+  from{
+    opacity:0;
+    transform:translateY(30px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+@keyframes spin{
+  from{transform:rotate(0)}
+  to{transform:rotate(360deg)}
+}
+
+@keyframes pop{
+  from{
+    transform:scale(.8);
+    opacity:0;
+  }
+  to{
+    transform:scale(1);
+    opacity:1;
+  }
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:1100px){
+  .products{
+    grid-template-columns:repeat(2,1fr);
+  }
 }
 
 @media(max-width:700px){
-.hero{padding:90px 6%}
-.hero h1{font-size:60px}
-section{padding:70px 6%}
-.about{grid-template-columns:1fr}
-.owner-image{height:380px}
-.about-text h2{font-size:40px}
+
+  nav{
+    height:68px;
+  }
+
+  .mobile-menu{
+    top:68px;
+    min-height:calc(100vh - 68px);
+  }
+
+  .hero{
+    min-height:100vh;
+    padding:120px 6% 70px;
+  }
+
+  section{
+    padding:70px 6%;
+  }
+
+  .products{
+    grid-template-columns:1fr;
+  }
+
+  .owner{
+    grid-template-columns:1fr;
+    gap:35px;
+  }
+
+  .form{
+    grid-template-columns:1fr;
+  }
+
+  .full{
+    grid-column:auto;
+  }
+
+  .order-box{
+    padding:25px 18px;
+  }
+
+  .login-box{
+    padding:30px 20px;
+  }
+
 }
 </style>
 </head>
 
 <body>
 
-<!-- TOP -->
-<nav>
-<div class="logo">GOLU <span>DAIRY</span></div>
+<!-- ================= NAVBAR ================= -->
 
-<button class="menu" id="menuButton">
+<nav>
+
+<div class="logo">
+GOLU <span>DAIRY</span>
+</div>
+
+<button class="menu-btn" id="menuBtn" onclick="toggleMenu()">
 <span></span>
 <span></span>
 <span></span>
 </button>
+
 </nav>
 
-<!-- THREE LINE MENU -->
-<div class="drawer" id="drawer">
 
-<a href="#home">Home</a>
-<a href="#products">Dairy Products</a>
-<a href="#animals">Cow & Buffalo</a>
-<a href="#order">Online Order</a>
-<a href="#payment">Payment</a>
-<a href="#about">Owner</a>
+<!-- ================= MOBILE MENU ================= -->
 
-<!-- LOGIN TOP MENU -->
-<a href="#" class="login-link"
-onclick="openLogin();return false">
+<div class="mobile-menu" id="mobileMenu">
+
+<a href="#home" onclick="closeMenu()">Home</a>
+
+<a href="#products" onclick="closeMenu()">Products</a>
+
+<a href="#owner" onclick="closeMenu()">Owner</a>
+
+<a href="#order" onclick="closeMenu()">Order Now</a>
+
+<a href="#payment" onclick="closeMenu()">Payment</a>
+
+<a href="https://instagram.com/golugurjar3344"
+target="_blank">
+📸 Instagram
+</a>
+
+<a href="javascript:void(0)"
+class="login-menu"
+onclick="openLogin()">
 🔐 Login / Sign Up
 </a>
 
 </div>
 
 
-<!-- FULL SCREEN VIDEO -->
-<header class="hero" id="home">
+<!-- ================= HERO ================= -->
 
-<!--
-IMPORTANT:
-Video ka exact naam cow-grazing.mp4 rakho.
-GitHub me index.html ke SAME FOLDER me upload karo.
--->
+<section class="hero" id="home">
 
-<video
-id="farmVideo"
-autoplay
-muted
-loop
-playsinline
-preload="auto">
+<div class="hero-box">
 
-<source src="cow-grazing.mp4" type="video/mp4">
-
-</video>
-
-<div class="hero-overlay"></div>
-
-<div class="hero-content">
-
-<div class="hero-small">
-PURE • FRESH • FARM TO FAMILY
+<div class="badge">
+PURE • FRESH • PREMIUM
 </div>
 
 <h1>
-Golu<br>
-<span>Dairy</span>
+Golu <span>Dairy</span>
 </h1>
 
 <p>
-Fresh milk, chhach, dahi, ghee and traditional
-farm products — directly from Golu Dairy.
+Pure goodness from our farm to your family.
+Fresh dairy products made with care, quality and trust.
 </p>
 
-<a href="#products" class="btn gold">
-View Products
-</a>
+<div class="buttons">
 
-<a href="#order" class="btn outline">
+<a class="btn" href="#order">
 Order Now
 </a>
 
-</div>
-</header>
+<a class="btn outline" href="#products">
+View Products
+</a>
 
-
-<!-- PRODUCTS -->
-<section id="products">
-
-<div class="title">
-<small>GOLU DAIRY COLLECTION</small>
-<h2>Pure & Fresh</h2>
-<p>Our dairy products</p>
 </div>
 
-<div class="grid">
+</div>
+
+</section>
+
+
+<!-- ================= PRODUCTS ================= -->
+
+<section id="products" class="reveal">
+
+<div class="center">
+
+<div class="kicker">
+OUR PRODUCTS
+</div>
+
+<h2>
+Freshness You <span>Can Trust</span>
+</h2>
+
+<p class="intro">
+Premium dairy and natural farm products for your family.
+</p>
+
+</div>
+
+
+<div class="products">
 
 <div class="card">
-<div class="card-image milk-image"></div>
-<div class="card-body">
-<h3>🥛 Pure Milk</h3>
-<p>Fresh dairy milk</p>
+<div class="icon">🥛</div>
+<h3>Fresh Milk</h3>
+<p>Pure fresh milk.</p>
 <div class="price">₹60 / Litre</div>
-<a href="#order" class="btn gold">Order</a>
-</div>
+<a class="btn" href="#order">Order</a>
 </div>
 
 <div class="card">
-<div class="card-image chhach-image"></div>
-<div class="card-body">
-<h3>🥤 Fresh Chhach</h3>
-<p>Traditional refreshing taste</p>
+<div class="icon">🥤</div>
+<h3>Pure Chhach</h3>
+<p>Fresh traditional chhach.</p>
 <div class="price">₹40 / Litre</div>
-<a href="#order" class="btn gold">Order</a>
-</div>
+<a class="btn" href="#order">Order</a>
 </div>
 
 <div class="card">
-<div class="card-image dahi-image"></div>
-<div class="card-body">
-<h3>🥣 Pure Dahi</h3>
-<p>Fresh and creamy</p>
+<div class="icon">🥣</div>
+<h3>Fresh Dahi</h3>
+<p>Thick and fresh dahi.</p>
 <div class="price">₹120 / Kg</div>
-<a href="#order" class="btn gold">Order</a>
-</div>
-</div>
-
-<div class="card">
-<div class="card-image ghee-image"></div>
-<div class="card-body">
-<h3>🧈 Pure Ghee</h3>
-<p>Traditional rich flavour</p>
-<div class="price">₹1500 / Kg</div>
-<a href="#order" class="btn gold">Order</a>
-</div>
+<a class="btn" href="#order">Order</a>
 </div>
 
 <div class="card">
-<div class="card-image kande-image"></div>
-<div class="card-body">
-<h3>🔥 Cow Dung Kande</h3>
-<p>Traditional farm product</p>
+<div class="icon">🧈</div>
+<h3>Pure Ghee</h3>
+<p>Rich traditional ghee.</p>
+<div class="price">₹1,500 / Kg</div>
+<a class="btn" href="#order">Order</a>
+</div>
+
+<div class="card">
+<div class="icon">🐄</div>
+<h3>Gobar Kande</h3>
+<p>Natural cow-dung kande.</p>
 <div class="price">₹150 / Kg</div>
-<a href="#order" class="btn gold">Order</a>
-</div>
+<a class="btn" href="#order">Order</a>
 </div>
 
 </div>
+
 </section>
 
 
-<!-- COW / BUFFALO -->
-<section id="animals">
+<!-- ================= KANDE ================= -->
 
-<div class="title">
-<small>FARM ANIMALS</small>
-<h2>Cow & Buffalo</h2>
-<p>Buy and sell enquiry available</p>
+<section class="kande reveal">
+
+<div class="center">
+
+<div class="kicker">
+NATURAL FARM PRODUCT
 </div>
 
-<div class="grid">
+<h2>
+Gobar Ke <span>Kande</span>
+</h2>
 
-<div class="card">
-<div class="card-image cow-image"></div>
-
-<div class="card-body">
-<h3>🐄 Cow</h3>
-<p>
-Cow buying and selling enquiry.
-Photos, breed, age and price WhatsApp par
-share kiye ja sakte hain.
+<p class="intro">
+Traditional cow-dung kande made for traditional use.
 </p>
 
-<button class="btn gold"
-onclick="animalOrder('Cow Buy')">
-Buy Cow
-</button>
-
-<button class="btn outline"
-onclick="animalOrder('Cow Sell')">
-Sell Cow
-</button>
-
-</div>
 </div>
 
 
-<div class="card">
-<div class="card-image buffalo-image"></div>
+<div class="kande-box">
 
-<div class="card-body">
-<h3>🐃 Buffalo</h3>
+<img
+src="golu-dairy-kande.jpg"
+alt="Golu Dairy Gobar Kande"
+onerror="this.style.display='none';">
+
+<div class="kande-info">
+
+<h3>
+Pure Cow Dung Kande
+</h3>
+
 <p>
-Buffalo buying and selling enquiry.
-Photos, breed, age and price WhatsApp par
-share kiye ja sakte hain.
+Natural desi cow-dung kande / upale.
 </p>
 
-<button class="btn gold"
-onclick="animalOrder('Buffalo Buy')">
-Buy Buffalo
-</button>
-
-<button class="btn outline"
-onclick="animalOrder('Buffalo Sell')">
-Sell Buffalo
-</button>
-
-</div>
+<div class="price">
+₹150 / Kg
 </div>
 
+<a
+class="btn"
+href="https://wa.me/919024853012?text=Namaste%20Golu%20Dairy,%20mujhe%20gobar%20ke%20kande%20order%20karne%20hain."
+target="_blank">
+Order on WhatsApp
+</a>
+
 </div>
+
+</div>
+
 </section>
 
 
-<!-- ONLINE ORDER -->
-<section id="order">
+<!-- ================= OWNER ================= -->
 
-<div class="title">
-<small>ONLINE BOOKING</small>
-<h2>Place Your Order</h2>
-<p>Order details WhatsApp par bhejein</p>
+<section id="owner" class="reveal">
+
+<div class="owner">
+
+<img
+src="owner.jpg"
+alt="Golu Gurjar Owner">
+
+<div>
+
+<div class="kicker">
+MEET THE OWNER
 </div>
+
+<h2>
+Golu <span>Gurjar</span>
+</h2>
+
+<h3>
+Founder & Owner — Golu Dairy
+</h3>
+
+<p>
+Welcome to Golu Dairy. Our mission is to bring
+fresh, quality dairy goodness from our farm to
+families with purity, care and trust.
+</p>
+
+<div class="buttons">
+
+<a class="btn"
+href="tel:9024853012">
+Call Owner
+</a>
+
+<a
+class="btn"
+style="background:transparent;color:#123d2e;border:1px solid #123d2e"
+href="https://instagram.com/golugurjar3344"
+target="_blank">
+Instagram
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= ORDER ================= -->
+
+<section class="order reveal" id="order">
+
+<div class="center">
+
+<div class="kicker">
+ONLINE ORDER
+</div>
+
+<h2>
+Place Your <span>Order</span>
+</h2>
+
+<p class="intro">
+Product और quantity चुनें और WhatsApp पर order भेजें।
+</p>
+
+</div>
+
 
 <div class="order-box">
 
-<label>Product</label>
+<h3>
+Order Details
+</h3>
+
+<div class="form">
+
+<input
+id="name"
+class="full"
+placeholder="Your Name">
+
+<input
+id="mobile"
+placeholder="Mobile Number">
+
+<input
+id="address"
+placeholder="Delivery Address">
 
 <select id="product">
-<option value="Milk" data-price="60">
+
+<option value="Milk" data-price="60" data-unit="Litre">
 Milk — ₹60/L
 </option>
 
-<option value="Chhach" data-price="40">
+<option value="Chhach" data-price="40" data-unit="Litre">
 Chhach — ₹40/L
 </option>
 
-<option value="Dahi" data-price="120">
+<option value="Dahi" data-price="120" data-unit="Kg">
 Dahi — ₹120/Kg
 </option>
 
-<option value="Ghee" data-price="1500">
-Ghee — ₹1500/Kg
+<option value="Ghee" data-price="1500" data-unit="Kg">
+Ghee — ₹1,500/Kg
 </option>
 
-<option value="Kande" data-price="150">
-Kande — ₹150/Kg
+<option value="Gobar Kande" data-price="150" data-unit="Kg">
+Gobar Kande — ₹150/Kg
 </option>
+
 </select>
-
-
-<label>Quantity</label>
 
 <input
 id="quantity"
@@ -676,27 +975,7 @@ type="number"
 min="1"
 value="1">
 
-
-<label>Your Name</label>
-
-<input
-id="customerName"
-placeholder="Name">
-
-
-<label>Mobile Number</label>
-
-<input
-id="customerMobile"
-placeholder="Mobile Number"
-type="tel">
-
-
-<label>Delivery Address</label>
-
-<input
-id="deliveryAddress"
-placeholder="Full Address">
+</div>
 
 
 <div class="total">
@@ -705,367 +984,123 @@ Total: ₹<span id="total">60</span>
 
 
 <button
-class="btn gold"
-onclick="sendOrder()">
+class="btn pay"
+onclick="payNow()">
+💳 Pay Online
+</button>
 
-📲 Order on WhatsApp
 
+<button
+class="btn"
+style="width:100%"
+onclick="whatsappOrder()">
+📱 Send Order on WhatsApp
 </button>
 
 </div>
+
 </section>
 
 
-<!-- PAYMENT -->
-<section id="payment" class="payment">
+<!-- ================= PAYMENT ================= -->
 
-<div class="title">
-<small>ONLINE PAYMENT</small>
-<h2>Scan & Pay</h2>
-<p>QR code scan karke payment karein</p>
+<section class="payment reveal" id="payment">
+
+<div class="kicker">
+UPI PAYMENT
 </div>
 
-<div class="scanner">
+<h2>
+Pay <span>Online</span>
+</h2>
+
+<p class="intro">
+QR scan करके payment कर सकते हैं।
+</p>
+
+
+<div class="qr-box">
 
 <img
-src="scanner.jpg"
-alt="Golu Dairy Payment QR">
+src="golu-dairy-payment-qr.jpg"
+alt="Golu Dairy UPI QR"
+onerror="this.style.display='none';">
+
+<div class="upi">
+UPI: 9024853012-1@naviaxis
+</div>
+
+<div>
+KAUSHLYA DEVI
+</div>
 
 </div>
 
 </section>
 
 
-<!-- OWNER -->
-<section id="about">
+<!-- ================= CONTACT ================= -->
 
-<div class="about">
+<section class="contact reveal">
 
-<div class="owner-image"></div>
+<div class="kicker">
+GET IN TOUCH
+</div>
 
-<div class="about-text">
-
-<small>ABOUT GOLU DAIRY</small>
-
-<h2>Pure From Our Farm</h2>
+<h2>
+Golu <span>Dairy</span>
+</h2>
 
 <p>
-Golu Dairy ka aim fresh, pure aur quality
-dairy products customers tak pahunchana hai.
+For orders and enquiries contact us.
 </p>
 
-<p style="margin-top:18px">
-Milk, chhach, dahi, ghee, kande aur
-farm animal enquiry available hai.
-</p>
+
+<div class="buttons" style="justify-content:center">
+
+<a
+class="btn"
+href="https://wa.me/919024853012"
+target="_blank">
+WhatsApp
+</a>
+
+<a
+class="btn outline"
+href="https://instagram.com/golugurjar3344"
+target="_blank">
+Instagram
+</a>
 
 </div>
 
-</div>
 </section>
 
 
-<!-- FOOTER -->
+<!-- ================= FOOTER ================= -->
+
 <footer>
 
-<div class="logo">
-GOLU <span>DAIRY</span>
-</div>
-
-<p style="margin-top:10px">
-Pure • Fresh • Premium
-</p>
-
-<p style="margin-top:8px">
 © 2026 Golu Dairy
-</p>
+
+<br><br>
+
+<a
+href="https://instagram.com/golugurjar3344"
+target="_blank">
+📸 @golugurjar3344
+</a>
 
 </footer>
 
 
-<!-- WHATSAPP BUTTON -->
+<!-- ================= WHATSAPP ================= -->
+
 <a
-class="whatsapp"
+class="wa"
 href="https://wa.me/919024853012"
 target="_blank">
-☎
+WA
 </a>
 
-
-<!-- LOGIN MODAL -->
-<div class="modal" id="loginModal">
-
-<div class="login-box">
-
-<button
-class="close"
-onclick="closeLogin()">
-×
-</button>
-
-<h2>Customer Login</h2>
-
-<p>
-Login / Sign up with Google
-</p>
-
-<!-- GOOGLE LOGIN BUTTON -->
-<button
-class="btn gold"
-style="width:100%"
-onclick="googleLogin()">
-
-🔐 Continue with Google
-
-</button>
-
-<hr style="margin:25px 0;border-color:#ffffff15">
-
-<p>
-Mobile OTP login bhi yahan connect kiya ja sakta hai.
-Real SMS OTP ke liye authentication service
-connect karni hogi.
-</p>
-
-</div>
-</div>
-
-
-<script>
-
-/* MENU */
-
-const menuButton =
-document.getElementById("menuButton");
-
-const drawer =
-document.getElementById("drawer");
-
-menuButton.onclick = function(){
-
-drawer.classList.toggle("open");
-
-};
-
-
-/* CLOSE MENU AFTER CLICK */
-
-document.querySelectorAll(".drawer a")
-.forEach(function(link){
-
-link.addEventListener("click",function(){
-
-drawer.classList.remove("open");
-
-});
-
-});
-
-
-/* PRODUCT TOTAL */
-
-const product =
-document.getElementById("product");
-
-const quantity =
-document.getElementById("quantity");
-
-const total =
-document.getElementById("total");
-
-function updateTotal(){
-
-const price =
-Number(
-product.options[
-product.selectedIndex
-].dataset.price
-);
-
-const qty =
-Number(quantity.value || 1);
-
-total.textContent =
-price * qty;
-
-}
-
-product.onchange = updateTotal;
-quantity.oninput = updateTotal;
-
-
-/* WHATSAPP ORDER */
-
-function sendOrder(){
-
-const productName =
-product.value;
-
-const price =
-Number(
-product.options[
-product.selectedIndex
-].dataset.price
-);
-
-const qty =
-Number(quantity.value || 1);
-
-const name =
-document.getElementById(
-"customerName"
-).value.trim();
-
-const mobile =
-document.getElementById(
-"customerMobile"
-).value.trim();
-
-const address =
-document.getElementById(
-"deliveryAddress"
-).value.trim();
-
-
-if(!name || !mobile || !address){
-
-alert(
-"Name, Mobile Number aur Delivery Address bhariye."
-);
-
-return;
-
-}
-
-
-const amount =
-price * qty;
-
-
-const message =
-`Namaste Golu Dairy! 👋
-
-ONLINE ORDER
-
-Product: ${productName}
-Quantity: ${qty}
-Total: ₹${amount}
-
-Customer Name: ${name}
-Mobile: ${mobile}
-
-Delivery Address:
-${address}
-
-Please order confirm karein.`;
-
-
-window.open(
-"https://wa.me/919024853012?text="+
-encodeURIComponent(message),
-"_blank"
-);
-
-}
-
-
-/* COW / BUFFALO */
-
-function animalOrder(type){
-
-const message =
-`Namaste Golu Dairy! 👋
-
-Mujhe ${type} ke baare mein enquiry karni hai.
-
-Please photo, breed, age, milk capacity aur price share karein.`;
-
-
-window.open(
-"https://wa.me/919024853012?text="+
-encodeURIComponent(message),
-"_blank"
-);
-
-}
-
-
-/* LOGIN */
-
-function openLogin(){
-
-document
-.getElementById("loginModal")
-.classList.add("show");
-
-}
-
-function closeLogin(){
-
-document
-.getElementById("loginModal")
-.classList.remove("show");
-
-}
-
-
-/* GOOGLE LOGIN */
-
-function googleLogin(){
-
-alert(
-"Google Login connect karne ke liye Supabase/Firebase authentication setup required hai."
-);
-
-}
-
-
-/* VIDEO */
-
-const video =
-document.getElementById("farmVideo");
-
-
-/*
-Mobile/browser autoplay ke liye video muted hai.
-Agar video load ho gayi to automatically loop chalegi.
-*/
-
-video.muted = true;
-
-video.play().catch(function(){
-
-console.log(
-"Browser ne autoplay block kiya."
-);
-
-});
-
-
-/* LOGIN MODAL OUTSIDE CLICK */
-
-document
-.getElementById("loginModal")
-.addEventListener(
-"click",
-function(e){
-
-if(e.target === this){
-
-closeLogin();
-
-}
-
-});
-
-
-</script>
-
-</body>
-</html>
-
-  
-
-
-    
 
