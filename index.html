@@ -1,799 +1,1071 @@
-
-
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#06150e">
-<title>Golu Dairy | Pure • Fresh • Premium</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="theme-color" content="#06150d">
+<title>Golu Dairy | Pure & Fresh</title>
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
+*{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{
-  font-family:Arial,Helvetica,sans-serif;
-  background:#06150e;color:#fff;overflow-x:hidden
+font-family:Arial,sans-serif;background:#06150d;color:#fff;
+overflow-x:hidden
 }
 :root{
-  --green:#06150e;
-  --green2:#0b2a1d;
-  --gold:#e6c45b;
-  --cream:#f5f0df;
-  --muted:#aebbb4;
+--gold:#e4c35a;
+--dark:#06150d;
+--card:#0b2419;
+--text:#f7f1df;
+--muted:#aab7b0
 }
 
-/* NAV */
-nav{
-  position:fixed;top:0;left:0;width:100%;height:74px;
-  z-index:1000;display:flex;align-items:center;
-  justify-content:space-between;padding:0 6%;
-  background:rgba(3,15,10,.72);
-  backdrop-filter:blur(18px);
-  border-bottom:1px solid rgba(230,196,91,.2)
+/* TOP BAR */
+.nav{
+position:fixed;top:0;left:0;width:100%;height:70px;
+z-index:1000;display:flex;align-items:center;
+justify-content:space-between;padding:0 6%;
+background:rgba(3,15,9,.78);
+backdrop-filter:blur(16px);
+border-bottom:1px solid rgba(228,195,90,.25)
 }
-.logo{font-size:25px;font-weight:900;letter-spacing:1px}
+
+.logo{
+font-size:24px;font-weight:900;letter-spacing:1px
+}
 .logo span{color:var(--gold)}
 
 .menu{
-  width:46px;height:46px;border-radius:50%;
-  background:transparent;border:1px solid #c5a746;
-  cursor:pointer;display:flex;flex-direction:column;
-  justify-content:center;align-items:center;gap:5px
+width:46px;height:46px;border-radius:50%;
+background:transparent;border:1px solid var(--gold);
+display:flex;flex-direction:column;
+justify-content:center;align-items:center;
+gap:5px;cursor:pointer
 }
-.menu span{width:21px;height:2px;background:var(--gold);transition:.3s}
+.menu span{
+width:21px;height:2px;background:var(--gold)
+}
 
+/* MENU */
 .drawer{
-  position:fixed;right:-320px;top:0;width:300px;height:100vh;
-  z-index:999;background:#061b12;padding:100px 30px;
-  transition:.4s;border-left:1px solid #9c8337
+position:fixed;right:-320px;top:0;
+width:300px;height:100vh;
+z-index:1100;background:#071b12;
+padding:95px 28px 30px;
+transition:.35s;
+border-left:1px solid rgba(228,195,90,.4);
+box-shadow:-20px 0 60px #0008
 }
 .drawer.open{right:0}
+
 .drawer a{
-  display:block;color:#fff;text-decoration:none;
-  padding:17px 0;border-bottom:1px solid #ffffff12;
-  font-size:18px
+display:block;text-decoration:none;color:#fff;
+padding:16px 0;border-bottom:1px solid #ffffff12;
+font-size:17px
 }
 .drawer a:hover{color:var(--gold)}
 
-/* HERO VIDEO */
+.login-link{
+color:var(--gold)!important;
+font-weight:bold
+}
+
+/* HERO */
 .hero{
-  position:relative;height:100vh;min-height:650px;
-  display:flex;align-items:center;padding:100px 7%;
-  overflow:hidden
+height:100vh;
+min-height:650px;
+position:relative;
+overflow:hidden;
+display:flex;
+align-items:center;
+padding:90px 7%
 }
+
 .hero video{
-  position:absolute;inset:0;width:100%;height:100%;
-  object-fit:cover;z-index:0
+position:absolute;
+inset:0;
+width:100%;
+height:100%;
+object-fit:cover;
+z-index:0;
+background:#06150d
 }
-.video-overlay{
-  position:absolute;inset:0;z-index:1;
-  background:
-  linear-gradient(90deg,#03120bd9 5%,#03120b99 55%,#03120b2b),
-  linear-gradient(0deg,#06150e,transparent 45%)
+
+.hero-overlay{
+position:absolute;
+inset:0;
+z-index:1;
+background:
+linear-gradient(90deg,
+rgba(3,14,8,.92),
+rgba(3,14,8,.55),
+rgba(3,14,8,.15)),
+linear-gradient(0deg,#06150d,transparent 40%)
 }
-.hero-content{position:relative;z-index:2;max-width:760px}
-.eyebrow{
-  color:var(--gold);font-size:12px;
-  letter-spacing:5px;font-weight:bold
+
+.hero-content{
+position:relative;
+z-index:2;
+max-width:700px
 }
+
+.hero-small{
+color:var(--gold);
+font-size:12px;
+letter-spacing:5px;
+font-weight:bold
+}
+
 .hero h1{
-  font-size:clamp(58px,10vw,110px);
-  line-height:.86;margin:20px 0
+font-size:clamp(55px,10vw,105px);
+line-height:.88;
+margin:20px 0
 }
+
 .hero h1 span{color:var(--gold)}
+
 .hero p{
-  max-width:620px;color:#d7dfda;
-  font-size:18px;line-height:1.8
+color:#dce3df;
+font-size:18px;
+line-height:1.7;
+max-width:600px
 }
+
 .btn{
-  display:inline-block;border:0;cursor:pointer;
-  padding:14px 25px;border-radius:30px;
-  text-decoration:none;font-weight:800;
-  margin:20px 7px 0 0;transition:.3s
+display:inline-block;
+padding:14px 24px;
+border-radius:30px;
+border:0;
+cursor:pointer;
+font-weight:bold;
+text-decoration:none;
+margin:18px 7px 0 0;
+transition:.3s
 }
-.gold{background:var(--gold);color:#07140d}
-.outline{border:1px solid #ffffff66;color:#fff;background:#ffffff08}
-.btn:hover{transform:translateY(-4px);box-shadow:0 15px 35px #0006}
 
-/* SECTIONS */
-section{padding:95px 7%}
-.heading{text-align:center;margin-bottom:45px}
-.heading small{color:var(--gold);letter-spacing:4px}
-.heading h2{font-size:clamp(38px,6vw,60px);margin:10px 0}
-.heading p{color:var(--muted)}
+.btn:hover{
+transform:translateY(-3px)
+}
 
-/* PRODUCTS */
+.gold{
+background:var(--gold);
+color:#07140d
+}
+
+.outline{
+background:transparent;
+color:#fff;
+border:1px solid #ffffff55
+}
+
+/* COMMON */
+section{padding:90px 7%}
+
+.title{
+text-align:center;
+margin-bottom:45px
+}
+
+.title small{
+color:var(--gold);
+letter-spacing:4px
+}
+
+.title h2{
+font-size:clamp(38px,6vw,58px);
+margin:10px 0
+}
+
+.title p{color:var(--muted)}
+
 .grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:22px
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:22px
 }
+
+/* CARDS */
 .card{
-  background:linear-gradient(145deg,#0d3022,#071b13);
-  border:1px solid #e6c45b25;border-radius:25px;
-  overflow:hidden;transition:.4s
+background:linear-gradient(145deg,#0c2c1d,#071a11);
+border:1px solid rgba(228,195,90,.2);
+border-radius:24px;
+overflow:hidden;
+transition:.35s
 }
+
 .card:hover{
-  transform:translateY(-8px);
-  border-color:#e6c45b88
+transform:translateY(-7px);
+border-color:rgba(228,195,90,.7)
 }
-.card-img{
-  height:220px;background-size:cover;
-  background-position:center
+
+.card-image{
+height:225px;
+background-position:center;
+background-size:cover;
+background-color:#10271c
 }
-.milk{background-image:url("https://images.unsplash.com/photo-1563636619-e9143da7973b?auto=format&fit=crop&w=900&q=85")}
-.chhach{background-image:url("https://images.unsplash.com/photo-1550583724-b2692b85b150?auto=format&fit=crop&w=900&q=85")}
-.dahi{background-image:url("https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=900&q=85")}
-.ghee{background-image:url("https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=900&q=85")}
-.kande{background-image:url("golu-dairy-kande.jpg")}
 
-.card-body{padding:22px}
-.card-body h3{font-size:23px;margin-bottom:8px}
-.card-body p{color:var(--muted);line-height:1.6}
-.price{color:var(--gold);font-size:21px;font-weight:bold;margin:14px 0}
-
-/* CATTLE */
-.cow{background-image:url("https://images.unsplash.com/photo-1516467508483-a7212febe31a?auto=format&fit=crop&w=1000&q=85")}
-.buffalo{background-image:url("https://images.unsplash.com/photo-1558346648-9757f2fa4474?auto=format&fit=crop&w=1000&q=85")}
-
-/* FEATURES */
-.feature{
-  text-align:center;padding:32px 20px;
-  background:#ffffff06;border:1px solid #ffffff10;
-  border-radius:22px
+/*
+YOUR OWN PHOTOS:
+cow.jpg
+buffalo.jpg
+kande.jpg
+*/
+.cow-image{
+background-image:url("cow.jpg")
 }
-.feature .icon{font-size:40px;margin-bottom:12px}
-.feature p{color:var(--muted);margin-top:8px}
+
+.buffalo-image{
+background-image:url("buffalo.jpg")
+}
+
+.kande-image{
+background-image:url("kande.jpg")
+}
+
+.milk-image{
+background-image:url("milk.jpg")
+}
+
+.chhach-image{
+background-image:url("chhach.jpg")
+}
+
+.dahi-image{
+background-image:url("dahi.jpg")
+}
+
+.ghee-image{
+background-image:url("ghee.jpg")
+}
+
+.card-body{
+padding:22px
+}
+
+.card-body h3{
+font-size:22px;
+margin-bottom:8px
+}
+
+.card-body p{
+color:var(--muted);
+line-height:1.6
+}
+
+.price{
+color:var(--gold);
+font-size:21px;
+font-weight:bold;
+margin:13px 0
+}
 
 /* ORDER */
 .order-box{
-  max-width:680px;margin:auto;padding:32px;
-  background:linear-gradient(145deg,#0d3022,#061a11);
-  border:1px solid #e6c45b35;border-radius:28px
+max-width:680px;
+margin:auto;
+padding:30px;
+background:#0b291b;
+border:1px solid rgba(228,195,90,.3);
+border-radius:26px
 }
-label{display:block;color:#dce4df;margin:14px 0 6px}
-input,select{
-  width:100%;padding:14px 15px;
-  border-radius:11px;border:1px solid #ffffff20;
-  background:#04120c;color:#fff;outline:none
-}
-input:focus,select:focus{border-color:var(--gold)}
-.total{color:var(--gold);font-size:25px;font-weight:bold;margin-top:20px}
 
-/* ABOUT */
+label{
+display:block;
+margin:14px 0 6px;
+color:#dce4df
+}
+
+input,select{
+width:100%;
+padding:14px;
+border-radius:10px;
+border:1px solid #ffffff20;
+background:#06150d;
+color:#fff;
+outline:none
+}
+
+.total{
+font-size:25px;
+font-weight:bold;
+color:var(--gold);
+margin:20px 0
+}
+
+/* OWNER */
 .about{
-  display:grid;grid-template-columns:1fr 1fr;
-  gap:55px;align-items:center
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:55px;
+align-items:center
 }
-.owner{
-  height:500px;border-radius:30px;
-  background:url("owner.jpg") center/cover;
-  border:1px solid #e6c45b44
+
+.owner-image{
+height:470px;
+border-radius:30px;
+background:url("owner.jpg") center/cover;
+border:1px solid rgba(228,195,90,.4)
 }
-.about-text small{color:var(--gold);letter-spacing:4px}
-.about-text h2{font-size:52px;margin:15px 0}
-.about-text p{color:var(--muted);line-height:1.9}
+
+.about-text small{
+color:var(--gold);
+letter-spacing:4px
+}
+
+.about-text h2{
+font-size:50px;
+margin:15px 0
+}
+
+.about-text p{
+color:var(--muted);
+line-height:1.9
+}
 
 /* PAYMENT */
 .payment{text-align:center}
-.qr{
-  max-width:330px;margin:25px auto;
-  padding:15px;background:#fff;border-radius:22px
-}
-.qr img{display:block;width:100%}
 
-/* CTA */
-.cta{
-  margin:10px 7% 80px;padding:80px 25px;
-  border-radius:35px;text-align:center;
-  background:
-  linear-gradient(#062016d9,#062016e8),
-  url("https://images.unsplash.com/photo-1560493676-04071c5f467b?auto=format&fit=crop&w=1800&q=85")
-  center/cover
+.scanner{
+width:min(330px,90%);
+margin:25px auto;
+padding:15px;
+background:#fff;
+border-radius:22px
 }
-.cta h2{font-size:clamp(35px,6vw,58px);margin-bottom:12px}
 
-/* LOGIN MODAL */
+.scanner img{
+display:block;
+width:100%
+}
+
+/* LOGIN */
 .modal{
-  position:fixed;inset:0;z-index:2000;
-  background:#000b;display:none;
-  align-items:center;justify-content:center;
-  padding:20px
-}
-.modal.show{display:flex}
-.login{
-  width:min(430px,100%);padding:32px;
-  border-radius:28px;background:#0a2519;
-  border:1px solid #e6c45b55;
-  box-shadow:0 30px 80px #000
-}
-.login h2{font-size:32px;margin-bottom:8px}
-.login p{color:var(--muted);margin-bottom:20px}
-.close{
-  float:right;border:0;background:none;
-  color:#fff;font-size:25px;cursor:pointer
+position:fixed;
+inset:0;
+z-index:3000;
+background:#000b;
+display:none;
+align-items:center;
+justify-content:center;
+padding:20px
 }
 
-/* WHATSAPP */
-.whatsapp{
-  position:fixed;right:20px;bottom:20px;
-  width:60px;height:60px;border-radius:50%;
-  background:#20d46b;color:#fff;z-index:900;
-  display:flex;align-items:center;justify-content:center;
-  text-decoration:none;font-size:27px;
-  box-shadow:0 10px 35px #20d46b55
+.modal.show{display:flex}
+
+.login-box{
+width:min(420px,100%);
+background:#0a2518;
+border:1px solid rgba(228,195,90,.5);
+border-radius:25px;
+padding:30px;
+box-shadow:0 30px 90px #000
+}
+
+.close{
+float:right;
+background:none;
+border:0;
+color:#fff;
+font-size:27px;
+cursor:pointer
+}
+
+.login-box h2{
+font-size:32px;
+margin-bottom:8px
+}
+
+.login-box p{
+color:var(--muted);
+margin-bottom:20px
 }
 
 /* FOOTER */
 footer{
-  text-align:center;padding:45px 7%;
-  border-top:1px solid #ffffff10;color:#84928b
+padding:45px 7%;
+text-align:center;
+border-top:1px solid #ffffff10;
+color:#8c9993
+}
+
+/* WHATSAPP */
+.whatsapp{
+position:fixed;
+right:20px;
+bottom:20px;
+z-index:900;
+width:60px;
+height:60px;
+border-radius:50%;
+background:#20d46b;
+color:#fff;
+display:flex;
+align-items:center;
+justify-content:center;
+text-decoration:none;
+font-size:25px;
+box-shadow:0 10px 30px #20d46b55
 }
 
 @media(max-width:700px){
-  .hero{padding:100px 6%}
-  .hero h1{font-size:60px}
-  section{padding:70px 6%}
-  .about{grid-template-columns:1fr}
-  .owner{height:380px}
-  .about-text h2{font-size:40px}
-  .cta{margin:10px 6% 60px}
+.hero{padding:90px 6%}
+.hero h1{font-size:60px}
+section{padding:70px 6%}
+.about{grid-template-columns:1fr}
+.owner-image{height:380px}
+.about-text h2{font-size:40px}
 }
 </style>
 </head>
 
 <body>
 
-<!-- NAVIGATION -->
+<!-- TOP -->
 <nav>
-  <div class="logo">GOLU <span>DAIRY</span></div>
-  <button class="menu" id="menuBtn" aria-label="Menu">
-    <span></span><span></span><span></span>
-  </button>
+<div class="logo">GOLU <span>DAIRY</span></div>
+
+<button class="menu" id="menuButton">
+<span></span>
+<span></span>
+<span></span>
+</button>
 </nav>
 
+<!-- THREE LINE MENU -->
 <div class="drawer" id="drawer">
-  <a href="#home">Home</a>
-  <a href="#products">Dairy Products</a>
-  <a href="#cattle">Cow & Buffalo</a>
-  <a href="#order">Online Order</a>
-  <a href="#about">About</a>
-  <a href="#payment">Payment</a>
-  <a href="#contact">Contact</a>
-  <a href="#" onclick="openLogin();return false">🔐 Login / OTP</a>
+
+<a href="#home">Home</a>
+<a href="#products">Dairy Products</a>
+<a href="#animals">Cow & Buffalo</a>
+<a href="#order">Online Order</a>
+<a href="#payment">Payment</a>
+<a href="#about">Owner</a>
+
+<!-- LOGIN TOP MENU -->
+<a href="#" class="login-link"
+onclick="openLogin();return false">
+🔐 Login / Sign Up
+</a>
+
 </div>
 
-<!-- FULL SCREEN LUXURY VIDEO -->
+
+<!-- FULL SCREEN VIDEO -->
 <header class="hero" id="home">
 
-  <!-- IMPORTANT:
-       GitHub me apni video ka naam cow-grazing.mp4 rakho
-       aur index.html ke saath same folder me upload karo.
-  -->
-  <video autoplay muted loop playsinline poster="owner.jpg">
-    <source src="cow-grazing.mp4" type="video/mp4">
-  </video>
+<!--
+IMPORTANT:
+Video ka exact naam cow-grazing.mp4 rakho.
+GitHub me index.html ke SAME FOLDER me upload karo.
+-->
 
-  <div class="video-overlay"></div>
+<video
+id="farmVideo"
+autoplay
+muted
+loop
+playsinline
+preload="auto">
 
-  <div class="hero-content">
-    <div class="eyebrow">PURE • FRESH • FARM TO FAMILY</div>
+<source src="cow-grazing.mp4" type="video/mp4">
 
-    <h1>
-      Golu<br>
-      <span>Dairy</span>
-    </h1>
+</video>
 
-    <p>
-      Fresh dairy products, traditional farm goodness
-      and premium service — directly from Golu Dairy.
-    </p>
+<div class="hero-overlay"></div>
 
-    <a href="#products" class="btn gold">Explore Products</a>
-    <a href="#order" class="btn outline">Order Now</a>
-  </div>
+<div class="hero-content">
+
+<div class="hero-small">
+PURE • FRESH • FARM TO FAMILY
+</div>
+
+<h1>
+Golu<br>
+<span>Dairy</span>
+</h1>
+
+<p>
+Fresh milk, chhach, dahi, ghee and traditional
+farm products — directly from Golu Dairy.
+</p>
+
+<a href="#products" class="btn gold">
+View Products
+</a>
+
+<a href="#order" class="btn outline">
+Order Now
+</a>
+
+</div>
 </header>
+
 
 <!-- PRODUCTS -->
 <section id="products">
-  <div class="heading">
-    <small>OUR COLLECTION</small>
-    <h2>Pure & Fresh</h2>
-    <p>Quality dairy products for your family.</p>
-  </div>
 
-  <div class="grid">
+<div class="title">
+<small>GOLU DAIRY COLLECTION</small>
+<h2>Pure & Fresh</h2>
+<p>Our dairy products</p>
+</div>
 
-    <div class="card">
-      <div class="card-img milk"></div>
-      <div class="card-body">
-        <h3>🥛 Pure Milk</h3>
-        <p>Fresh dairy milk.</p>
-        <div class="price">₹60 / Litre</div>
-        <a href="#order" class="btn gold">Order</a>
-      </div>
-    </div>
+<div class="grid">
 
-    <div class="card">
-      <div class="card-img chhach"></div>
-      <div class="card-body">
-        <h3>🥤 Fresh Chhach</h3>
-        <p>Refreshing traditional taste.</p>
-        <div class="price">₹40 / Litre</div>
-        <a href="#order" class="btn gold">Order</a>
-      </div>
-    </div>
+<div class="card">
+<div class="card-image milk-image"></div>
+<div class="card-body">
+<h3>🥛 Pure Milk</h3>
+<p>Fresh dairy milk</p>
+<div class="price">₹60 / Litre</div>
+<a href="#order" class="btn gold">Order</a>
+</div>
+</div>
 
-    <div class="card">
-      <div class="card-img dahi"></div>
-      <div class="card-body">
-        <h3>🥣 Pure Dahi</h3>
-        <p>Fresh and creamy.</p>
-        <div class="price">₹120 / Kg</div>
-        <a href="#order" class="btn gold">Order</a>
-      </div>
-    </div>
+<div class="card">
+<div class="card-image chhach-image"></div>
+<div class="card-body">
+<h3>🥤 Fresh Chhach</h3>
+<p>Traditional refreshing taste</p>
+<div class="price">₹40 / Litre</div>
+<a href="#order" class="btn gold">Order</a>
+</div>
+</div>
 
-    <div class="card">
-      <div class="card-img ghee"></div>
-      <div class="card-body">
-        <h3>🧈 Pure Ghee</h3>
-        <p>Rich traditional flavour.</p>
-        <div class="price">₹1500 / Kg</div>
-        <a href="#order" class="btn gold">Order</a>
-      </div>
-    </div>
+<div class="card">
+<div class="card-image dahi-image"></div>
+<div class="card-body">
+<h3>🥣 Pure Dahi</h3>
+<p>Fresh and creamy</p>
+<div class="price">₹120 / Kg</div>
+<a href="#order" class="btn gold">Order</a>
+</div>
+</div>
 
-    <div class="card">
-      <div class="card-img kande"></div>
-      <div class="card-body">
-        <h3>🔥 Cow Dung Kande</h3>
-        <p>Traditional farm product.</p>
-        <div class="price">₹150 / Kg</div>
-        <a href="#order" class="btn gold">Order</a>
-      </div>
-    </div>
+<div class="card">
+<div class="card-image ghee-image"></div>
+<div class="card-body">
+<h3>🧈 Pure Ghee</h3>
+<p>Traditional rich flavour</p>
+<div class="price">₹1500 / Kg</div>
+<a href="#order" class="btn gold">Order</a>
+</div>
+</div>
 
-  </div>
+<div class="card">
+<div class="card-image kande-image"></div>
+<div class="card-body">
+<h3>🔥 Cow Dung Kande</h3>
+<p>Traditional farm product</p>
+<div class="price">₹150 / Kg</div>
+<a href="#order" class="btn gold">Order</a>
+</div>
+</div>
+
+</div>
 </section>
+
 
 <!-- COW / BUFFALO -->
-<section id="cattle">
-  <div class="heading">
-    <small>GOLU DAIRY FARM MARKET</small>
-    <h2>Cow & Buffalo</h2>
-    <p>Buy or sell dairy animals through WhatsApp enquiry.</p>
-  </div>
+<section id="animals">
 
-  <div class="grid">
+<div class="title">
+<small>FARM ANIMALS</small>
+<h2>Cow & Buffalo</h2>
+<p>Buy and sell enquiry available</p>
+</div>
 
-    <div class="card">
-      <div class="card-img cow"></div>
-      <div class="card-body">
-        <h3>🐄 Cows</h3>
-        <p>
-          Photos, breed, age, milk capacity and price
-          can be shared through WhatsApp.
-        </p>
-        <button class="btn gold" onclick="animalEnquiry('Cow Buy')">
-          Buy / Enquire
-        </button>
-        <button class="btn outline" onclick="animalEnquiry('Cow Sell')">
-          Sell Cow
-        </button>
-      </div>
-    </div>
+<div class="grid">
 
-    <div class="card">
-      <div class="card-img buffalo"></div>
-      <div class="card-body">
-        <h3>🐃 Buffalo</h3>
-        <p>
-          Enquire about available buffaloes and
-          share your selling details.
-        </p>
-        <button class="btn gold" onclick="animalEnquiry('Buffalo Buy')">
-          Buy / Enquire
-        </button>
-        <button class="btn outline" onclick="animalEnquiry('Buffalo Sell')">
-          Sell Buffalo
-        </button>
-      </div>
-    </div>
+<div class="card">
+<div class="card-image cow-image"></div>
 
-  </div>
+<div class="card-body">
+<h3>🐄 Cow</h3>
+<p>
+Cow buying and selling enquiry.
+Photos, breed, age and price WhatsApp par
+share kiye ja sakte hain.
+</p>
+
+<button class="btn gold"
+onclick="animalOrder('Cow Buy')">
+Buy Cow
+</button>
+
+<button class="btn outline"
+onclick="animalOrder('Cow Sell')">
+Sell Cow
+</button>
+
+</div>
+</div>
+
+
+<div class="card">
+<div class="card-image buffalo-image"></div>
+
+<div class="card-body">
+<h3>🐃 Buffalo</h3>
+<p>
+Buffalo buying and selling enquiry.
+Photos, breed, age and price WhatsApp par
+share kiye ja sakte hain.
+</p>
+
+<button class="btn gold"
+onclick="animalOrder('Buffalo Buy')">
+Buy Buffalo
+</button>
+
+<button class="btn outline"
+onclick="animalOrder('Buffalo Sell')">
+Sell Buffalo
+</button>
+
+</div>
+</div>
+
+</div>
 </section>
 
-<!-- FEATURES -->
-<section>
-  <div class="heading">
-    <small>OUR PROMISE</small>
-    <h2>Why Golu Dairy?</h2>
-  </div>
 
-  <div class="grid">
-    <div class="feature">
-      <div class="icon">🥛</div>
-      <h3>Fresh</h3>
-      <p>Fresh farm products.</p>
-    </div>
-
-    <div class="feature">
-      <div class="icon">✨</div>
-      <h3>Pure</h3>
-      <p>Quality you can trust.</p>
-    </div>
-
-    <div class="feature">
-      <div class="icon">🌱</div>
-      <h3>Natural</h3>
-      <p>Traditional goodness.</p>
-    </div>
-
-    <div class="feature">
-      <div class="icon">🤝</div>
-      <h3>Trusted</h3>
-      <p>Customer-first service.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ORDER SYSTEM -->
+<!-- ONLINE ORDER -->
 <section id="order">
-  <div class="heading">
-    <small>ONLINE BOOKING</small>
-    <h2>Place Your Order</h2>
-    <p>Order details directly WhatsApp par bhejein.</p>
-  </div>
 
-  <div class="order-box">
+<div class="title">
+<small>ONLINE BOOKING</small>
+<h2>Place Your Order</h2>
+<p>Order details WhatsApp par bhejein</p>
+</div>
 
-    <label>Product</label>
-    <select id="product">
-      <option value="Milk" data-price="60">Milk — ₹60/L</option>
-      <option value="Chhach" data-price="40">Chhach — ₹40/L</option>
-      <option value="Dahi" data-price="120">Dahi — ₹120/Kg</option>
-      <option value="Ghee" data-price="1500">Ghee — ₹1500/Kg</option>
-      <option value="Kande" data-price="150">Kande — ₹150/Kg</option>
-    </select>
+<div class="order-box">
 
-    <label>Quantity</label>
-    <input id="qty" type="number" min="1" value="1">
+<label>Product</label>
 
-    <label>Name</label>
-    <input id="customerName" placeholder="Your name">
+<select id="product">
+<option value="Milk" data-price="60">
+Milk — ₹60/L
+</option>
 
-    <label>Mobile Number</label>
-    <input id="customerMobile" type="tel" placeholder="Mobile number">
+<option value="Chhach" data-price="40">
+Chhach — ₹40/L
+</option>
 
-    <label>Delivery Address</label>
-    <input id="address" placeholder="Full delivery address">
+<option value="Dahi" data-price="120">
+Dahi — ₹120/Kg
+</option>
 
-    <div class="total">
-      Total: ₹<span id="total">60</span>
-    </div>
+<option value="Ghee" data-price="1500">
+Ghee — ₹1500/Kg
+</option>
 
-    <button class="btn gold" onclick="sendOrder()">
-      📲 Send Order on WhatsApp
-    </button>
+<option value="Kande" data-price="150">
+Kande — ₹150/Kg
+</option>
+</select>
 
-  </div>
+
+<label>Quantity</label>
+
+<input
+id="quantity"
+type="number"
+min="1"
+value="1">
+
+
+<label>Your Name</label>
+
+<input
+id="customerName"
+placeholder="Name">
+
+
+<label>Mobile Number</label>
+
+<input
+id="customerMobile"
+placeholder="Mobile Number"
+type="tel">
+
+
+<label>Delivery Address</label>
+
+<input
+id="deliveryAddress"
+placeholder="Full Address">
+
+
+<div class="total">
+Total: ₹<span id="total">60</span>
+</div>
+
+
+<button
+class="btn gold"
+onclick="sendOrder()">
+
+📲 Order on WhatsApp
+
+</button>
+
+</div>
 </section>
 
-<!-- ABOUT -->
-<section id="about">
-  <div class="about">
-
-    <div class="owner"></div>
-
-    <div class="about-text">
-      <small>ABOUT GOLU DAIRY</small>
-      <h2>From Our Farm To Your Family</h2>
-
-      <p>
-        Golu Dairy ka aim fresh, pure aur quality dairy
-        products customers tak pahunchana hai.
-      </p>
-
-      <p style="margin-top:18px">
-        Milk, chhach, dahi, ghee aur traditional farm
-        products ke saath cow aur buffalo enquiry bhi
-        available hai.
-      </p>
-
-      <a href="#order" class="btn gold">Start Ordering</a>
-    </div>
-
-  </div>
-</section>
 
 <!-- PAYMENT -->
-<section id="payment">
-  <div class="heading">
-    <small>PAYMENT</small>
-    <h2>Scan & Pay</h2>
-    <p>Payment QR scan karein.</p>
-  </div>
+<section id="payment" class="payment">
 
-  <div class="qr">
-    <img src="scanner.jpg" alt="Golu Dairy UPI QR">
-  </div>
+<div class="title">
+<small>ONLINE PAYMENT</small>
+<h2>Scan & Pay</h2>
+<p>QR code scan karke payment karein</p>
+</div>
+
+<div class="scanner">
+
+<img
+src="scanner.jpg"
+alt="Golu Dairy Payment QR">
+
+</div>
+
 </section>
 
-<!-- CONTACT CTA -->
-<div class="cta" id="contact">
-  <h2>Freshness Is Our Promise</h2>
-  <p>Golu Dairy se apna order aaj hi book karein.</p>
 
-  <button class="btn gold" onclick="generalWhatsApp()">
-    📲 WhatsApp Golu Dairy
-  </button>
+<!-- OWNER -->
+<section id="about">
+
+<div class="about">
+
+<div class="owner-image"></div>
+
+<div class="about-text">
+
+<small>ABOUT GOLU DAIRY</small>
+
+<h2>Pure From Our Farm</h2>
+
+<p>
+Golu Dairy ka aim fresh, pure aur quality
+dairy products customers tak pahunchana hai.
+</p>
+
+<p style="margin-top:18px">
+Milk, chhach, dahi, ghee, kande aur
+farm animal enquiry available hai.
+</p>
+
 </div>
 
+</div>
+</section>
+
+
+<!-- FOOTER -->
 <footer>
-  <div class="logo">GOLU <span>DAIRY</span></div>
-  <p style="margin-top:10px">Pure • Fresh • Premium</p>
-  <p style="margin-top:8px">© 2026 Golu Dairy</p>
+
+<div class="logo">
+GOLU <span>DAIRY</span>
+</div>
+
+<p style="margin-top:10px">
+Pure • Fresh • Premium
+</p>
+
+<p style="margin-top:8px">
+© 2026 Golu Dairy
+</p>
+
 </footer>
 
-<!-- WHATSAPP -->
+
+<!-- WHATSAPP BUTTON -->
 <a
-  class="whatsapp"
-  href="https://wa.me/919024853012"
-  target="_blank"
-  aria-label="WhatsApp"
->☎</a>
+class="whatsapp"
+href="https://wa.me/919024853012"
+target="_blank">
+☎
+</a>
 
-<!-- LOGIN / OTP UI -->
+
+<!-- LOGIN MODAL -->
 <div class="modal" id="loginModal">
-  <div class="login">
 
-    <button class="close" onclick="closeLogin()">×</button>
+<div class="login-box">
 
-    <h2>Customer Login</h2>
-    <p>Mobile number se secure login karein.</p>
+<button
+class="close"
+onclick="closeLogin()">
+×
+</button>
 
-    <label>Mobile Number</label>
-    <input id="loginMobile" type="tel" placeholder="10 digit mobile number">
+<h2>Customer Login</h2>
 
-    <button class="btn gold" style="width:100%"
-            onclick="sendOTP()">
-      Send OTP
-    </button>
+<p>
+Login / Sign up with Google
+</p>
 
-    <div id="otpArea" style="display:none">
+<!-- GOOGLE LOGIN BUTTON -->
+<button
+class="btn gold"
+style="width:100%"
+onclick="googleLogin()">
 
-      <label>Enter OTP</label>
-      <input id="otp" type="number" placeholder="Enter OTP">
+🔐 Continue with Google
 
-      <button class="btn gold" style="width:100%"
-              onclick="verifyOTP()">
-        Verify OTP
-      </button>
+</button>
 
-      <p style="margin-top:15px;font-size:13px">
-        Real SMS OTP ke liye authentication service connect karni hogi.
-      </p>
+<hr style="margin:25px 0;border-color:#ffffff15">
 
-    </div>
+<p>
+Mobile OTP login bhi yahan connect kiya ja sakta hai.
+Real SMS OTP ke liye authentication service
+connect karni hogi.
+</p>
 
-  </div>
 </div>
+</div>
+
 
 <script>
 
-/* =========================
-   MOBILE MENU
-========================= */
+/* MENU */
 
-const menuBtn = document.getElementById("menuBtn");
-const drawer = document.getElementById("drawer");
+const menuButton =
+document.getElementById("menuButton");
 
-menuBtn.onclick = () => {
-  drawer.classList.toggle("open");
+const drawer =
+document.getElementById("drawer");
+
+menuButton.onclick = function(){
+
+drawer.classList.toggle("open");
+
 };
 
-document.querySelectorAll(".drawer a").forEach(link => {
-  link.addEventListener("click", () => {
-    drawer.classList.remove("open");
-  });
+
+/* CLOSE MENU AFTER CLICK */
+
+document.querySelectorAll(".drawer a")
+.forEach(function(link){
+
+link.addEventListener("click",function(){
+
+drawer.classList.remove("open");
+
+});
+
 });
 
 
-/* =========================
-   PRODUCT TOTAL
-========================= */
+/* PRODUCT TOTAL */
 
-const product = document.getElementById("product");
-const qty = document.getElementById("qty");
-const total = document.getElementById("total");
+const product =
+document.getElementById("product");
+
+const quantity =
+document.getElementById("quantity");
+
+const total =
+document.getElementById("total");
 
 function updateTotal(){
 
-  const price =
-    Number(product.options[product.selectedIndex].dataset.price);
+const price =
+Number(
+product.options[
+product.selectedIndex
+].dataset.price
+);
 
-  const quantity = Number(qty.value || 1);
+const qty =
+Number(quantity.value || 1);
 
-  total.textContent = price * quantity;
+total.textContent =
+price * qty;
+
 }
 
-product.addEventListener("change", updateTotal);
-qty.addEventListener("input", updateTotal);
+product.onchange = updateTotal;
+quantity.oninput = updateTotal;
 
 
-/* =========================
-   WHATSAPP ORDER
-========================= */
+/* WHATSAPP ORDER */
 
 function sendOrder(){
 
-  const productName = product.value;
+const productName =
+product.value;
 
-  const price =
-    Number(product.options[product.selectedIndex].dataset.price);
+const price =
+Number(
+product.options[
+product.selectedIndex
+].dataset.price
+);
 
-  const quantity = Number(qty.value || 1);
+const qty =
+Number(quantity.value || 1);
 
-  const name =
-    document.getElementById("customerName").value.trim();
+const name =
+document.getElementById(
+"customerName"
+).value.trim();
 
-  const mobile =
-    document.getElementById("customerMobile").value.trim();
+const mobile =
+document.getElementById(
+"customerMobile"
+).value.trim();
 
-  const address =
-    document.getElementById("address").value.trim();
+const address =
+document.getElementById(
+"deliveryAddress"
+).value.trim();
 
-  if(!name || !mobile || !address){
 
-    alert(
-      "Please Name, Mobile Number aur Delivery Address bhariye."
-    );
+if(!name || !mobile || !address){
 
-    return;
-  }
+alert(
+"Name, Mobile Number aur Delivery Address bhariye."
+);
 
-  const amount = price * quantity;
+return;
 
-  const message =
+}
+
+
+const amount =
+price * qty;
+
+
+const message =
 `Namaste Golu Dairy! 👋
 
-Mujhe order karna hai.
+ONLINE ORDER
 
 Product: ${productName}
-Quantity: ${quantity}
+Quantity: ${qty}
 Total: ₹${amount}
 
 Customer Name: ${name}
 Mobile: ${mobile}
-Delivery Address: ${address}
+
+Delivery Address:
+${address}
 
 Please order confirm karein.`;
 
-  window.open(
-    "https://wa.me/919024853012?text=" +
-    encodeURIComponent(message),
-    "_blank"
-  );
+
+window.open(
+"https://wa.me/919024853012?text="+
+encodeURIComponent(message),
+"_blank"
+);
+
 }
 
 
-/* =========================
-   COW / BUFFALO ENQUIRY
-========================= */
+/* COW / BUFFALO */
 
-function animalEnquiry(type){
+function animalOrder(type){
 
-  const message =
+const message =
 `Namaste Golu Dairy! 👋
 
 Mujhe ${type} ke baare mein enquiry karni hai.
 
-Please photos, breed, age, milk capacity aur price/details share karein.`;
+Please photo, breed, age, milk capacity aur price share karein.`;
 
-  window.open(
-    "https://wa.me/919024853012?text=" +
-    encodeURIComponent(message),
-    "_blank"
-  );
+
+window.open(
+"https://wa.me/919024853012?text="+
+encodeURIComponent(message),
+"_blank"
+);
+
 }
 
 
-/* =========================
-   GENERAL WHATSAPP
-========================= */
-
-function generalWhatsApp(){
-
-  const message =
-`Namaste Golu Dairy! 👋
-
-Mujhe Golu Dairy ke products aur services ke baare mein information chahiye.`;
-
-  window.open(
-    "https://wa.me/919024853012?text=" +
-    encodeURIComponent(message),
-    "_blank"
-  );
-}
-
-
-/* =========================
-   LOGIN MODAL
-========================= */
+/* LOGIN */
 
 function openLogin(){
-  document.getElementById("loginModal").classList.add("show");
+
+document
+.getElementById("loginModal")
+.classList.add("show");
+
 }
 
 function closeLogin(){
-  document.getElementById("loginModal").classList.remove("show");
+
+document
+.getElementById("loginModal")
+.classList.remove("show");
+
 }
+
+
+/* GOOGLE LOGIN */
+
+function googleLogin(){
+
+alert(
+"Google Login connect karne ke liye Supabase/Firebase authentication setup required hai."
+);
+
+}
+
+
+/* VIDEO */
+
+const video =
+document.getElementById("farmVideo");
 
 
 /*
-  IMPORTANT:
-  Ye UI OTP flow ke liye ready hai.
-  Real SMS OTP ke liye yahan Supabase/Firebase
-  authentication connect karna hoga.
-
-  Fake OTP ko successful login nahi banaya gaya hai.
+Mobile/browser autoplay ke liye video muted hai.
+Agar video load ho gayi to automatically loop chalegi.
 */
 
-function sendOTP(){
+video.muted = true;
 
-  const mobile =
-    document.getElementById("loginMobile").value.trim();
+video.play().catch(function(){
 
-  if(!/^[0-9]{10}$/.test(mobile)){
-
-    alert("Please valid 10 digit mobile number enter karein.");
-
-    return;
-  }
-
-  document.getElementById("otpArea").style.display = "block";
-
-  alert(
-    "OTP service abhi connect nahi hai. Real OTP ke liye Supabase/Firebase setup required hai."
-  );
-}
-
-function verifyOTP(){
-
-  alert(
-    "Real OTP verification ke liye authentication backend connect karna hoga."
-  );
-}
-
-
-/* Close modal outside box */
-
-document.getElementById("loginModal").addEventListener("click",function(e){
-
-  if(e.target === this){
-    closeLogin();
-  }
+console.log(
+"Browser ne autoplay block kiya."
+);
 
 });
+
+
+/* LOGIN MODAL OUTSIDE CLICK */
+
+document
+.getElementById("loginModal")
+.addEventListener(
+"click",
+function(e){
+
+if(e.target === this){
+
+closeLogin();
+
+}
+
+});
+
 
 </script>
 
 </body>
 </html>
 
-
-
-
-
-
-
-
-
-
+  
 
 
     
-<!--
+
