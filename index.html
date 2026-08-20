@@ -1,648 +1,686 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Golu Dairy | Pure • Fresh • Premium</title>
+<title>Golu Dairy | Pure & Fresh</title>
 
 <style>
+
 *{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
+box-sizing:border-box;
+margin:0;
+padding:0
 }
 
 html{
-  scroll-behavior:smooth;
+scroll-behavior:smooth
 }
 
 body{
-  font-family:Arial,sans-serif;
-  background:#f8f3e5;
-  color:#123d2e;
-  overflow-x:hidden;
+font-family:Arial,sans-serif;
+background:#f7f1df;
+color:#123d2e;
+line-height:1.6
 }
 
 a{
-  text-decoration:none;
+text-decoration:none
 }
 
 /* ================= NAVBAR ================= */
 
 nav{
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  z-index:999;
-  height:75px;
-  padding:0 6%;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  background:rgba(5,31,23,.94);
-  backdrop-filter:blur(15px);
-  border-bottom:1px solid rgba(230,200,92,.25);
+position:sticky;
+top:0;
+z-index:1000;
+background:#08291f;
+color:white;
+padding:14px 6%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+box-shadow:0 5px 25px #0004
 }
 
 .logo{
-  font-family:Georgia,serif;
-  font-size:27px;
-  font-weight:bold;
-  color:white;
+font-family:Georgia,serif;
+font-size:28px;
+font-weight:bold
 }
 
 .logo span{
-  color:#e6c85c;
+color:#e6c85c
 }
 
-/* THREE LINE MENU */
+.nav-right{
+display:flex;
+align-items:center;
+gap:18px
+}
+
+.nav-order{
+color:white;
+font-weight:bold
+}
+
+/* 3 LINE */
 
 .menu-btn{
-  width:45px;
-  height:42px;
-  border:1px solid #e6c85c;
-  border-radius:10px;
-  background:transparent;
-  cursor:pointer;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  gap:5px;
+width:45px;
+height:45px;
+border-radius:50%;
+border:1px solid #e6c85c;
+background:transparent;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+gap:5px;
+cursor:pointer
 }
 
 .menu-btn span{
-  width:23px;
-  height:2px;
-  background:#e6c85c;
-  transition:.3s;
+width:21px;
+height:2px;
+background:#e6c85c;
+border-radius:5px
 }
 
-.menu-btn.active span:nth-child(1){
-  transform:translateY(7px) rotate(45deg);
+/* SIDE MENU */
+
+.side-menu{
+position:fixed;
+top:0;
+right:-330px;
+width:310px;
+height:100vh;
+background:#08291f;
+z-index:2000;
+padding:85px 30px 30px;
+box-shadow:-15px 0 45px #0007;
+transition:.35s ease
 }
 
-.menu-btn.active span:nth-child(2){
-  opacity:0;
+.side-menu.active{
+right:0
 }
 
-.menu-btn.active span:nth-child(3){
-  transform:translateY(-7px) rotate(-45deg);
+.side-menu a{
+display:block;
+color:white;
+font-weight:bold;
+font-size:17px;
+padding:17px 5px;
+border-bottom:1px solid #ffffff18
 }
 
-/* MENU */
-
-.mobile-menu{
-  position:fixed;
-  top:75px;
-  right:-100%;
-  width:300px;
-  min-height:calc(100vh - 75px);
-  background:#08291f;
-  z-index:998;
-  padding:35px 25px;
-  transition:.4s;
-  box-shadow:-15px 20px 50px #0005;
+.side-menu a:hover{
+color:#e6c85c
 }
 
-.mobile-menu.show{
-  right:0;
+.close-menu{
+position:absolute;
+top:18px;
+right:22px;
+border:0;
+background:none;
+color:#e6c85c;
+font-size:38px;
+cursor:pointer
 }
 
-.mobile-menu a{
-  display:block;
-  color:white;
-  padding:17px 10px;
-  border-bottom:1px solid #ffffff18;
-  font-weight:bold;
-}
-
-.login-menu{
-  margin-top:20px;
-  background:#e6c85c;
-  color:#08291f!important;
-  border-radius:30px;
-  text-align:center;
-  border:0!important;
-}
-
-/* ================= HERO ================= */
+/* ================= HERO VIDEO ================= */
 
 .hero{
-  min-height:100vh;
-  padding:130px 7% 80px;
-  display:flex;
-  align-items:center;
-  position:relative;
-  overflow:hidden;
-  background:
-  radial-gradient(circle at 85% 20%,#e6c85c22,transparent 30%),
-  linear-gradient(135deg,#061f18,#0d3b2e 55%,#08291f);
-  color:white;
+min-height:88vh;
+position:relative;
+overflow:hidden;
+color:white;
+display:flex;
+align-items:center
 }
 
-.hero:before{
-  content:"";
-  position:absolute;
-  width:400px;
-  height:400px;
-  border:1px solid #e6c85c33;
-  border-radius:50%;
-  right:-120px;
-  top:100px;
-  animation:spin 15s linear infinite;
+.hero-video{
+position:absolute;
+inset:0;
+width:100%;
+height:100%;
+object-fit:cover;
+z-index:0
+}
+
+.hero-overlay{
+position:absolute;
+inset:0;
+background:
+linear-gradient(
+90deg,
+#061f18e8,
+#0d3b2eaa,
+#061f1855
+);
+z-index:1
 }
 
 .hero-box{
-  max-width:850px;
-  position:relative;
-  z-index:2;
+position:relative;
+z-index:3;
+padding:80px 7%;
+max-width:900px
 }
 
 .badge{
-  color:#e6c85c;
-  font-weight:bold;
-  letter-spacing:5px;
-  animation:fadeUp 1s ease;
+color:#e6c85c;
+font-weight:bold;
+letter-spacing:5px
 }
 
 h1{
-  font-family:Georgia,serif;
-  font-size:clamp(55px,9vw,100px);
-  line-height:.95;
-  margin:25px 0;
-  animation:fadeUp 1.2s ease;
+font-family:Georgia,serif;
+font-size:70px;
+line-height:1;
+margin:20px 0
 }
 
 h1 span,
 h2 span{
-  color:#e6c85c;
+color:#e6c85c
 }
 
 .hero p{
-  max-width:700px;
-  color:#dbe7e0;
-  font-size:20px;
-  animation:fadeUp 1.4s ease;
+font-size:20px;
+color:#e6eee9;
+max-width:700px
 }
 
 .buttons{
-  display:flex;
-  flex-wrap:wrap;
-  gap:14px;
-  margin-top:30px;
+display:flex;
+flex-wrap:wrap;
+gap:14px;
+margin-top:28px
 }
 
 .btn{
-  display:inline-block;
-  padding:14px 25px;
-  border-radius:40px;
-  background:#e6c85c;
-  color:#08291f;
-  font-weight:bold;
-  border:none;
-  cursor:pointer;
-  transition:.3s;
-}
-
-.btn:hover{
-  transform:translateY(-4px);
-  box-shadow:0 12px 25px #e6c85c33;
+display:inline-block;
+padding:14px 24px;
+border-radius:40px;
+background:#e6c85c;
+color:#08291f;
+font-weight:bold;
+border:0;
+cursor:pointer
 }
 
 .btn.outline{
-  background:transparent;
-  color:white;
-  border:1px solid white;
+background:transparent;
+color:white;
+border:1px solid white
 }
 
-/* ================= SECTIONS ================= */
+/* ================= PHOTO SLIDER ================= */
+
+.photo-show{
+position:relative;
+height:430px;
+overflow:hidden;
+background:#061f18
+}
+
+.slide{
+position:absolute;
+inset:0;
+opacity:0;
+transition:opacity 1.2s ease
+}
+
+.slide.active{
+opacity:1
+}
+
+.slide img{
+width:100%;
+height:100%;
+object-fit:cover
+}
+
+.slide::after{
+content:"";
+position:absolute;
+inset:0;
+background:linear-gradient(
+90deg,
+#061f1899,
+transparent,
+#061f1855
+)
+}
+
+.slide-caption{
+position:absolute;
+z-index:3;
+left:7%;
+bottom:55px;
+color:white
+}
+
+.slide-caption small{
+color:#e6c85c;
+letter-spacing:4px;
+font-weight:bold
+}
+
+.slide-caption h2{
+font-family:Georgia,serif;
+font-size:48px;
+margin-top:8px
+}
+
+/* ================= GENERAL ================= */
 
 section{
-  padding:90px 7%;
+padding:80px 7%
 }
 
 .center{
-  text-align:center;
+text-align:center
 }
 
 .kicker{
-  color:#ad861d;
-  font-weight:bold;
-  letter-spacing:5px;
+color:#b08a22;
+font-weight:bold;
+letter-spacing:5px
 }
 
 h2{
-  font-family:Georgia,serif;
-  font-size:clamp(40px,6vw,60px);
-  line-height:1.1;
-  margin:12px 0;
+font-family:Georgia,serif;
+font-size:50px;
+line-height:1.1;
+margin:12px 0
 }
 
 .intro{
-  max-width:700px;
-  margin:auto;
-  color:#68756e;
-  font-size:18px;
+max-width:700px;
+margin:auto;
+color:#66736d;
+font-size:18px
 }
 
 /* ================= PRODUCTS ================= */
 
 .products{
-  margin-top:50px;
-  display:grid;
-  grid-template-columns:repeat(5,1fr);
-  gap:18px;
+margin-top:45px;
+display:grid;
+grid-template-columns:repeat(5,1fr);
+gap:18px
 }
 
 .card{
-  background:white;
-  padding:28px 18px;
-  border-radius:25px;
-  border:1px solid #eadfbf;
-  box-shadow:0 15px 35px #0000000d;
-  transition:.4s;
-}
-
-.card:hover{
-  transform:translateY(-10px);
-  box-shadow:0 25px 50px #0002;
+background:white;
+padding:25px 18px;
+border-radius:25px;
+box-shadow:0 10px 30px #00000012;
+border:1px solid #eadfbf;
+display:flex;
+flex-direction:column
 }
 
 .icon{
-  font-size:50px;
-  text-align:center;
+font-size:50px;
+text-align:center
 }
 
 .card h3{
-  font-family:Georgia,serif;
-  text-align:center;
-  font-size:24px;
-  margin:10px 0;
+font-family:Georgia,serif;
+font-size:25px;
+text-align:center;
+margin:10px 0
 }
 
 .card p{
-  color:#68756e;
-  text-align:center;
+color:#68756e;
+text-align:center;
+font-size:15px
 }
 
 .price{
-  color:#9b7916;
-  font-size:22px;
-  font-weight:bold;
-  text-align:center;
-  margin:15px 0;
+color:#9b7916;
+font-weight:bold;
+font-size:22px;
+text-align:center;
+margin:15px 0
 }
 
 .card .btn{
-  width:100%;
-  text-align:center;
+margin-top:auto;
+text-align:center
 }
 
 /* ================= KANDE ================= */
 
 .kande{
-  background:#eee5cf;
+background:#eee5cf
 }
 
 .kande-box{
-  max-width:900px;
-  margin:45px auto 0;
-  background:white;
-  border-radius:30px;
-  overflow:hidden;
-  box-shadow:0 20px 50px #0002;
+max-width:900px;
+margin:40px auto 0;
+background:white;
+border-radius:30px;
+overflow:hidden;
+box-shadow:0 15px 40px #00000015
 }
 
 .kande-box img{
-  width:100%;
-  max-height:500px;
-  object-fit:cover;
-  display:block;
+width:100%;
+display:block;
+max-height:520px;
+object-fit:cover
 }
 
 .kande-info{
-  padding:30px;
-  text-align:center;
+padding:30px;
+text-align:center
 }
 
 .kande-info h3{
-  font-family:Georgia,serif;
-  font-size:35px;
+font-family:Georgia,serif;
+font-size:34px
+}
+
+.kande-info p{
+color:#65716b;
+margin:10px 0 20px
 }
 
 /* ================= OWNER ================= */
 
 .owner{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:60px;
-  align-items:center;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:50px;
+align-items:center
 }
 
 .owner img{
-  width:100%;
-  max-height:600px;
-  object-fit:cover;
-  border-radius:35px;
-  border:7px solid white;
-  box-shadow:0 20px 50px #0002;
+width:100%;
+max-height:600px;
+object-fit:cover;
+border-radius:35px;
+border:7px solid white;
+box-shadow:0 15px 40px #0002
 }
 
 .owner h3{
-  color:#9b7916;
-  margin:15px 0;
-  font-size:23px;
+color:#9b7916;
+margin:10px 0 18px;
+font-size:23px
 }
 
 .owner p{
-  color:#5e6b65;
-  font-size:18px;
+font-size:18px;
+color:#5e6b65
 }
 
 /* ================= ORDER ================= */
 
 .order{
-  background:#f1ead8;
+background:#f1ead8
 }
 
 .order-box{
-  max-width:700px;
-  margin:45px auto 0;
-  background:white;
-  padding:35px;
-  border-radius:30px;
-  box-shadow:0 20px 50px #0002;
+max-width:700px;
+margin:40px auto 0;
+background:white;
+padding:30px;
+border-radius:30px;
+box-shadow:0 15px 40px #0001
 }
 
 .order-box h3{
-  font-family:Georgia,serif;
-  font-size:32px;
-  text-align:center;
+font-family:Georgia,serif;
+font-size:32px;
+text-align:center
 }
 
 .form{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:14px;
-  margin-top:25px;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:14px;
+margin-top:20px
 }
 
 input,
 select{
-  width:100%;
-  padding:15px;
-  border:1px solid #ddd;
-  border-radius:12px;
-  font-size:16px;
+width:100%;
+padding:14px;
+border:1px solid #ddd;
+border-radius:12px;
+font-size:16px
 }
 
 .full{
-  grid-column:1/-1;
+grid-column:1/-1
 }
 
 .total{
-  font-size:23px;
-  font-weight:bold;
-  margin:22px 0;
+font-size:22px;
+font-weight:bold;
+margin:20px 0
 }
 
 .pay{
-  background:#075f41;
-  color:white;
-  width:100%;
-  margin-bottom:12px;
+background:#075f41;
+color:white;
+width:100%;
+margin-bottom:12px
 }
 
 /* ================= PAYMENT ================= */
 
 .payment{
-  background:white;
-  text-align:center;
+background:white;
+text-align:center
 }
 
 .qr-box{
-  max-width:430px;
-  margin:40px auto;
-  padding:25px;
-  background:#f7f1df;
-  border-radius:30px;
+max-width:430px;
+margin:35px auto 0;
+padding:25px;
+background:#f7f1df;
+border-radius:30px
 }
 
 .qr-box img{
-  width:100%;
-  max-width:330px;
-  border-radius:18px;
+width:100%;
+max-width:330px;
+background:white;
+padding:12px;
+border-radius:18px
 }
 
 .upi{
-  font-weight:bold;
-  margin-top:15px;
+font-weight:bold;
+margin-top:12px
 }
 
 /* ================= CONTACT ================= */
 
 .contact{
-  background:#0d3b2e;
-  color:white;
-  text-align:center;
+background:#0d3b2e;
+color:white;
+text-align:center
 }
 
 .contact p{
-  color:#dfe8e3;
-  font-size:18px;
+color:#dfe8e3;
+font-size:18px
 }
 
-/* ================= FOOTER ================= */
-
 footer{
-  background:#061f18;
-  color:#bbc9c3;
-  text-align:center;
-  padding:28px;
+background:#061f18;
+color:#bbc9c3;
+padding:25px;
+text-align:center
 }
 
 footer a{
-  color:#e6c85c;
+color:#e6c85c
 }
-
-/* ================= WHATSAPP ================= */
 
 .wa{
-  position:fixed;
-  right:20px;
-  bottom:20px;
-  width:62px;
-  height:62px;
-  border-radius:50%;
-  background:#25d366;
-  color:white;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-weight:bold;
-  z-index:900;
-  box-shadow:0 10px 25px #0003;
+position:fixed;
+right:20px;
+bottom:20px;
+width:62px;
+height:62px;
+border-radius:50%;
+background:#25d366;
+color:white;
+display:flex;
+align-items:center;
+justify-content:center;
+font-weight:bold;
+z-index:1500;
+box-shadow:0 8px 25px #0005
 }
 
-/* ================= LOGIN MODAL ================= */
+/* ================= LOGIN ================= */
 
-.login-overlay{
-  position:fixed;
-  inset:0;
-  background:#0009;
-  backdrop-filter:blur(8px);
-  display:none;
-  align-items:center;
-  justify-content:center;
-  z-index:2000;
-  padding:20px;
+.login-modal{
+position:fixed;
+inset:0;
+background:#0009;
+display:none;
+align-items:center;
+justify-content:center;
+z-index:3000;
+padding:20px
 }
 
-.login-overlay.show{
-  display:flex;
+.login-modal.active{
+display:flex
 }
 
 .login-box{
-  width:100%;
-  max-width:430px;
-  background:white;
-  border-radius:30px;
-  padding:35px;
-  position:relative;
-  box-shadow:0 30px 80px #0005;
-  animation:pop .35s ease;
+width:100%;
+max-width:420px;
+background:white;
+border-radius:30px;
+padding:35px;
+box-shadow:0 20px 60px #0008;
+position:relative
 }
 
-.login-box h2{
-  font-size:38px;
-  text-align:center;
+.login-box h3{
+font-family:Georgia,serif;
+font-size:32px;
+text-align:center;
+color:#123d2e
 }
 
 .login-box p{
-  text-align:center;
-  color:#68756e;
+text-align:center;
+color:#68756e;
+margin:10px 0 25px
 }
 
-.login-box input{
-  margin-top:12px;
+.login-input{
+margin-bottom:14px
 }
 
-.login-box .btn{
-  width:100%;
-  margin-top:15px;
+.login-google{
+width:100%;
+background:white;
+border:1px solid #ddd;
+color:#123d2e;
+margin-bottom:12px
 }
 
-.close-login{
-  position:absolute;
-  right:18px;
-  top:15px;
-  border:0;
-  background:none;
-  font-size:30px;
-  cursor:pointer;
+.login-close{
+position:absolute;
+right:20px;
+top:12px;
+font-size:30px;
+border:0;
+background:none;
+cursor:pointer
 }
 
-/* ================= ANIMATION ================= */
+/* ================= RESPONSIVE ================= */
 
-.reveal{
-  opacity:0;
-  transform:translateY(40px);
-  transition:1s;
+@media(max-width:1050px){
+
+.products{
+grid-template-columns:repeat(2,1fr)
 }
 
-.reveal.active{
-  opacity:1;
-  transform:translateY(0);
+.owner{
+grid-template-columns:1fr
 }
 
-@keyframes fadeUp{
-  from{
-    opacity:0;
-    transform:translateY(30px);
-  }
-  to{
-    opacity:1;
-    transform:translateY(0);
-  }
 }
 
-@keyframes spin{
-  from{transform:rotate(0)}
-  to{transform:rotate(360deg)}
+@media(max-width:650px){
+
+.nav-order{
+display:none
 }
 
-@keyframes pop{
-  from{
-    transform:scale(.8);
-    opacity:0;
-  }
-  to{
-    transform:scale(1);
-    opacity:1;
-  }
+.side-menu{
+width:285px
 }
 
-/* ================= MOBILE ================= */
-
-@media(max-width:1100px){
-  .products{
-    grid-template-columns:repeat(2,1fr);
-  }
+.hero-box{
+padding:65px 6%
 }
 
-@media(max-width:700px){
+h1{
+font-size:55px
+}
 
-  nav{
-    height:68px;
-  }
+h2{
+font-size:40px
+}
 
-  .mobile-menu{
-    top:68px;
-    min-height:calc(100vh - 68px);
-  }
+section{
+padding:65px 6%
+}
 
-  .hero{
-    min-height:100vh;
-    padding:120px 6% 70px;
-  }
+.products{
+grid-template-columns:1fr
+}
 
-  section{
-    padding:70px 6%;
-  }
+.form{
+grid-template-columns:1fr
+}
 
-  .products{
-    grid-template-columns:1fr;
-  }
+.full{
+grid-column:auto
+}
 
-  .owner{
-    grid-template-columns:1fr;
-    gap:35px;
-  }
+.photo-show{
+height:330px
+}
 
-  .form{
-    grid-template-columns:1fr;
-  }
+.slide-caption h2{
+font-size:35px
+}
 
-  .full{
-    grid-column:auto;
-  }
-
-  .order-box{
-    padding:25px 18px;
-  }
-
-  .login-box{
-    padding:30px 20px;
-  }
+.slide-caption{
+left:6%;
+bottom:30px
+}
 
 }
+
 </style>
 </head>
 
+
 <body>
+
 
 <!-- ================= NAVBAR ================= -->
 
@@ -652,46 +690,105 @@ footer a{
 GOLU <span>DAIRY</span>
 </div>
 
-<button class="menu-btn" id="menuBtn" onclick="toggleMenu()">
+<div class="nav-right">
+
+<a class="nav-order" href="#order">
+Order Now
+</a>
+
+<button
+class="menu-btn"
+onclick="toggleMenu()"
+aria-label="Open Menu">
+
 <span></span>
 <span></span>
 <span></span>
+
 </button>
+
+</div>
 
 </nav>
 
 
-<!-- ================= MOBILE MENU ================= -->
+<!-- ================= SIDE MENU ================= -->
 
-<div class="mobile-menu" id="mobileMenu">
+<div id="sideMenu" class="side-menu">
 
-<a href="#home" onclick="closeMenu()">Home</a>
+<button
+class="close-menu"
+onclick="toggleMenu()">
+×
+</button>
 
-<a href="#products" onclick="closeMenu()">Products</a>
+<a href="#products" onclick="toggleMenu()">
+🥛 Products
+</a>
 
-<a href="#owner" onclick="closeMenu()">Owner</a>
+<a href="#order" onclick="toggleMenu()">
+🛒 Online Order
+</a>
 
-<a href="#order" onclick="closeMenu()">Order Now</a>
+<a href="#payment" onclick="toggleMenu()">
+💳 Online Payment
+</a>
 
-<a href="#payment" onclick="closeMenu()">Payment</a>
+<a href="#owner" onclick="toggleMenu()">
+👤 Owner
+</a>
 
-<a href="https://instagram.com/golugurjar3344"
+<a href="#animals" onclick="toggleMenu()">
+🐄 Our Animals
+</a>
+
+<a
+href="https://instagram.com/golugurjar3344"
 target="_blank">
 📸 Instagram
 </a>
 
-<a href="javascript:void(0)"
-class="login-menu"
-onclick="openLogin()">
-🔐 Login / Sign Up
+<a
+href="https://wa.me/919024853012"
+target="_blank">
+📱 WhatsApp
+</a>
+
+<a href="#" onclick="openLogin()">
+🔐 Login
 </a>
 
 </div>
 
 
-<!-- ================= HERO ================= -->
+<!-- ================= HERO VIDEO ================= -->
 
-<section class="hero" id="home">
+<section class="hero">
+
+<!--
+IMPORTANT:
+Is file ko apne website folder me rakho:
+
+golu-dairy-farm.mp4
+
+Agar video nahi hai to neeche poster image dikhegi.
+-->
+
+<video
+class="hero-video"
+autoplay
+muted
+loop
+playsinline
+poster="cow-farm.jpg">
+
+<source
+src="golu-dairy-farm.mp4"
+type="video/mp4">
+
+</video>
+
+<div class="hero-overlay"></div>
 
 <div class="hero-box">
 
@@ -705,16 +802,20 @@ Golu <span>Dairy</span>
 
 <p>
 Pure goodness from our farm to your family.
-Fresh dairy products made with care, quality and trust.
+Fresh dairy products with care, quality and trust.
 </p>
 
 <div class="buttons">
 
-<a class="btn" href="#order">
+<a
+class="btn"
+href="#order">
 Order Now
 </a>
 
-<a class="btn outline" href="#products">
+<a
+class="btn outline"
+href="#products">
 View Products
 </a>
 
@@ -725,9 +826,76 @@ View Products
 </section>
 
 
+<!-- ================= PHOTO SLIDER ================= -->
+
+<section style="padding:0">
+
+<div class="photo-show">
+
+<div class="slide active">
+
+<img
+src="cow.jpg"
+alt="Golu Dairy Cow">
+
+<div class="slide-caption">
+
+<small>GOLO DAIRY FARM</small>
+
+<h2>
+Pure Desi <span>Cow</span>
+</h2>
+
+</div>
+
+</div>
+
+
+<div class="slide">
+
+<img
+src="buffalo.jpg"
+alt="Golu Dairy Buffalo">
+
+<div class="slide-caption">
+
+<small>PREMIUM DAIRY</small>
+
+<h2>
+Healthy <span>Buffalo</span>
+</h2>
+
+</div>
+
+</div>
+
+
+<div class="slide">
+
+<img
+src="cow-farm.jpg"
+alt="Golu Dairy Farm">
+
+<div class="slide-caption">
+
+<small>FROM OUR FARM</small>
+
+<h2>
+Freshness <span>Every Day</span>
+</h2>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
 <!-- ================= PRODUCTS ================= -->
 
-<section id="products" class="reveal">
+<section id="products">
 
 <div class="center">
 
@@ -740,7 +908,7 @@ Freshness You <span>Can Trust</span>
 </h2>
 
 <p class="intro">
-Premium dairy and natural farm products for your family.
+Pure and fresh products for your family.
 </p>
 
 </div>
@@ -748,45 +916,195 @@ Premium dairy and natural farm products for your family.
 
 <div class="products">
 
+
 <div class="card">
+
 <div class="icon">🥛</div>
-<h3>Fresh Milk</h3>
-<p>Pure fresh milk.</p>
-<div class="price">₹60 / Litre</div>
-<a class="btn" href="#order">Order</a>
+
+<h3>
+Fresh Milk
+</h3>
+
+<p>
+Pure fresh milk.
+</p>
+
+<div class="price">
+₹60 / Litre
 </div>
 
+<a
+class="btn"
+href="#order">
+Order
+</a>
+
+</div>
+
+
 <div class="card">
+
 <div class="icon">🥤</div>
-<h3>Pure Chhach</h3>
-<p>Fresh traditional chhach.</p>
-<div class="price">₹40 / Litre</div>
-<a class="btn" href="#order">Order</a>
+
+<h3>
+Pure Chhach
+</h3>
+
+<p>
+Fresh traditional chhach.
+</p>
+
+<div class="price">
+₹40 / Litre
 </div>
 
+<a
+class="btn"
+href="#order">
+Order
+</a>
+
+</div>
+
+
 <div class="card">
+
 <div class="icon">🥣</div>
-<h3>Fresh Dahi</h3>
-<p>Thick and fresh dahi.</p>
-<div class="price">₹120 / Kg</div>
-<a class="btn" href="#order">Order</a>
+
+<h3>
+Fresh Dahi
+</h3>
+
+<p>
+Thick and fresh dahi.
+</p>
+
+<div class="price">
+₹120 / Kg
 </div>
 
+<a
+class="btn"
+href="#order">
+Order
+</a>
+
+</div>
+
+
 <div class="card">
+
 <div class="icon">🧈</div>
-<h3>Pure Ghee</h3>
-<p>Rich traditional ghee.</p>
-<div class="price">₹1,500 / Kg</div>
-<a class="btn" href="#order">Order</a>
+
+<h3>
+Pure Ghee
+</h3>
+
+<p>
+Rich traditional ghee.
+</p>
+
+<div class="price">
+₹1,500 / Kg
 </div>
 
-<div class="card">
-<div class="icon">🐄</div>
-<h3>Gobar Kande</h3>
-<p>Natural cow-dung kande.</p>
-<div class="price">₹150 / Kg</div>
-<a class="btn" href="#order">Order</a>
+<a
+class="btn"
+href="#order">
+Order
+</a>
+
 </div>
+
+
+<div class="card">
+
+<div class="icon">🐄</div>
+
+<h3>
+Gobar Kande
+</h3>
+
+<p>
+Natural cow-dung kande.
+</p>
+
+<div class="price">
+₹150 / Kg
+</div>
+
+<a
+class="btn"
+href="#order">
+Order
+</a>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- ================= ANIMALS ================= -->
+
+<section id="animals">
+
+<div class="center">
+
+<div class="kicker">
+OUR FARM
+</div>
+
+<h2>
+Our <span>Cow & Buffalo</span>
+</h2>
+
+<p class="intro">
+Healthy animals and quality care are an important part of Golu Dairy.
+</p>
+
+</div>
+
+<div class="products" style="grid-template-columns:1fr 1fr;max-width:1000px;margin-left:auto;margin-right:auto">
+
+
+<div class="card">
+
+<img
+src="cow.jpg"
+alt="Golu Dairy Cow"
+style="width:100%;height:300px;object-fit:cover;border-radius:20px">
+
+<h3>
+Desi Cow
+</h3>
+
+<p>
+Healthy and well cared for dairy cow.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<img
+src="buffalo.jpg"
+alt="Golu Dairy Buffalo"
+style="width:100%;height:300px;object-fit:cover;border-radius:20px">
+
+<h3>
+Buffalo
+</h3>
+
+<p>
+Healthy dairy buffalo from our farm.
+</p>
+
+</div>
+
 
 </div>
 
@@ -795,7 +1113,7 @@ Premium dairy and natural farm products for your family.
 
 <!-- ================= KANDE ================= -->
 
-<section class="kande reveal">
+<section class="kande">
 
 <div class="center">
 
@@ -818,7 +1136,7 @@ Traditional cow-dung kande made for traditional use.
 
 <img
 src="golu-dairy-kande.jpg"
-alt="Golu Dairy Gobar Kande"
+alt="Golu Dairy Gobar Ke Kande"
 onerror="this.style.display='none';">
 
 <div class="kande-info">
@@ -839,7 +1157,9 @@ Natural desi cow-dung kande / upale.
 class="btn"
 href="https://wa.me/919024853012?text=Namaste%20Golu%20Dairy,%20mujhe%20gobar%20ke%20kande%20order%20karne%20hain."
 target="_blank">
-Order on WhatsApp
+
+Order Kande on WhatsApp
+
 </a>
 
 </div>
@@ -851,7 +1171,7 @@ Order on WhatsApp
 
 <!-- ================= OWNER ================= -->
 
-<section id="owner" class="reveal">
+<section id="owner">
 
 <div class="owner">
 
@@ -866,7 +1186,7 @@ MEET THE OWNER
 </div>
 
 <h2>
-Golu <span>Gurjar</span>
+Golu Gurjar
 </h2>
 
 <h3>
@@ -874,14 +1194,16 @@ Founder & Owner — Golu Dairy
 </h3>
 
 <p>
-Welcome to Golu Dairy. Our mission is to bring
-fresh, quality dairy goodness from our farm to
-families with purity, care and trust.
+Welcome to Golu Dairy. I believe that good dairy
+begins with purity, care and trust. Our aim is to
+bring fresh, quality dairy goodness from our farm
+to families with an honest commitment to excellence.
 </p>
 
 <div class="buttons">
 
-<a class="btn"
+<a
+class="btn"
 href="tel:9024853012">
 Call Owner
 </a>
@@ -905,7 +1227,9 @@ Instagram
 
 <!-- ================= ORDER ================= -->
 
-<section class="order reveal" id="order">
+<section
+class="order"
+id="order">
 
 <div class="center">
 
@@ -918,7 +1242,7 @@ Place Your <span>Order</span>
 </h2>
 
 <p class="intro">
-Product और quantity चुनें और WhatsApp पर order भेजें।
+Product और quantity चुनें।
 </p>
 
 </div>
@@ -947,24 +1271,49 @@ placeholder="Delivery Address">
 
 <select id="product">
 
-<option value="Milk" data-price="60" data-unit="Litre">
+<option
+value="Milk"
+data-price="60"
+data-unit="Litre">
+
 Milk — ₹60/L
+
 </option>
 
-<option value="Chhach" data-price="40" data-unit="Litre">
+<option
+value="Chhach"
+data-price="40"
+data-unit="Litre">
+
 Chhach — ₹40/L
+
 </option>
 
-<option value="Dahi" data-price="120" data-unit="Kg">
+<option
+value="Dahi"
+data-price="120"
+data-unit="Kg">
+
 Dahi — ₹120/Kg
+
 </option>
 
-<option value="Ghee" data-price="1500" data-unit="Kg">
+<option
+value="Ghee"
+data-price="1500"
+data-unit="Kg">
+
 Ghee — ₹1,500/Kg
+
 </option>
 
-<option value="Gobar Kande" data-price="150" data-unit="Kg">
+<option
+value="Gobar Kande"
+data-price="150"
+data-unit="Kg">
+
 Gobar Kande — ₹150/Kg
+
 </option>
 
 </select>
@@ -973,20 +1322,25 @@ Gobar Kande — ₹150/Kg
 id="quantity"
 type="number"
 min="1"
-value="1">
+value="1"
+placeholder="Quantity">
 
 </div>
 
 
 <div class="total">
+
 Total: ₹<span id="total">60</span>
+
 </div>
 
 
 <button
 class="btn pay"
 onclick="payNow()">
+
 💳 Pay Online
+
 </button>
 
 
@@ -994,7 +1348,9 @@ onclick="payNow()">
 class="btn"
 style="width:100%"
 onclick="whatsappOrder()">
+
 📱 Send Order on WhatsApp
+
 </button>
 
 </div>
@@ -1004,7 +1360,9 @@ onclick="whatsappOrder()">
 
 <!-- ================= PAYMENT ================= -->
 
-<section class="payment reveal" id="payment">
+<section
+class="payment"
+id="payment">
 
 <div class="kicker">
 UPI PAYMENT
@@ -1015,7 +1373,7 @@ Pay <span>Online</span>
 </h2>
 
 <p class="intro">
-QR scan करके payment कर सकते हैं।
+QR scan karke payment kar sakte hain.
 </p>
 
 
@@ -1041,7 +1399,7 @@ KAUSHLYA DEVI
 
 <!-- ================= CONTACT ================= -->
 
-<section class="contact reveal">
+<section class="contact">
 
 <div class="kicker">
 GET IN TOUCH
@@ -1055,21 +1413,26 @@ Golu <span>Dairy</span>
 For orders and enquiries contact us.
 </p>
 
-
-<div class="buttons" style="justify-content:center">
+<div
+class="buttons"
+style="justify-content:center">
 
 <a
 class="btn"
 href="https://wa.me/919024853012"
 target="_blank">
+
 WhatsApp
+
 </a>
 
 <a
 class="btn outline"
 href="https://instagram.com/golugurjar3344"
 target="_blank">
+
 Instagram
+
 </a>
 
 </div>
@@ -1083,12 +1446,14 @@ Instagram
 
 © 2026 Golu Dairy
 
-<br><br>
+<br>
 
 <a
 href="https://instagram.com/golugurjar3344"
 target="_blank">
-📸 @golugurjar3344
+
+@golugurjar3344
+
 </a>
 
 </footer>
@@ -1100,7 +1465,358 @@ target="_blank">
 class="wa"
 href="https://wa.me/919024853012"
 target="_blank">
+
 WA
+
 </a>
 
 
+<!-- ================= LOGIN MODAL ================= -->
+
+<div
+id="loginModal"
+class="login-modal">
+
+<div class="login-box">
+
+<button
+class="login-close"
+onclick="closeLogin()">
+×
+</button>
+
+<h3>
+Welcome Back
+</h3>
+
+<p>
+Login to Golu Dairy
+</p>
+
+<button
+class="btn login-google"
+onclick="googleLogin()">
+
+🔐 Continue with Google
+
+</button>
+
+<input
+class="login-input"
+id="loginMobile"
+placeholder="Mobile Number"
+type="tel">
+
+<button
+class="btn"
+style="width:100%"
+onclick="sendLoginOTP()">
+
+Send OTP
+
+</button>
+
+<p
+id="loginMessage"
+style="font-size:14px;margin-top:15px">
+</p>
+
+</div>
+
+</div>
+
+
+<script>
+
+/* ================= MENU ================= */
+
+function toggleMenu(){
+
+const menu =
+document.getElementById("sideMenu");
+
+menu.classList.toggle("active");
+
+}
+
+
+/* ================= LOGIN ================= */
+
+function openLogin(){
+
+document
+.getElementById("loginModal")
+.classList.add("active");
+
+}
+
+function closeLogin(){
+
+document
+.getElementById("loginModal")
+.classList.remove("active");
+
+}
+
+function googleLogin(){
+
+alert(
+"Google Login activate karne ke liye Firebase/Google Authentication connect karna hoga."
+);
+
+}
+
+function sendLoginOTP(){
+
+const mobile =
+document.getElementById("loginMobile").value.trim();
+
+const message =
+document.getElementById("loginMessage");
+
+if(!mobile){
+
+message.innerText =
+"Please mobile number enter karein.";
+
+return;
+
+}
+
+message.innerText =
+"OTP system ke liye Firebase/OTP service connect karni hogi.";
+
+}
+
+
+/* ================= PHOTO SLIDER ================= */
+
+let currentSlide=0;
+
+const slides =
+document.querySelectorAll(".slide");
+
+function showSlide(index){
+
+slides.forEach(
+slide => slide.classList.remove("active")
+);
+
+slides[index].classList.add("active");
+
+}
+
+setInterval(function(){
+
+currentSlide++;
+
+if(currentSlide >= slides.length){
+currentSlide=0;
+}
+
+showSlide(currentSlide);
+
+},4500);
+
+
+/* ================= ORDER ================= */
+
+const product =
+document.getElementById("product");
+
+const quantity =
+document.getElementById("quantity");
+
+const total =
+document.getElementById("total");
+
+
+function updateTotal(){
+
+let price =
+Number(
+product
+.options[
+product.selectedIndex
+]
+.dataset.price
+);
+
+let qty =
+Math.max(
+1,
+Number(quantity.value)||1
+);
+
+total.innerText =
+(price*qty).toLocaleString("en-IN");
+
+}
+
+
+product.addEventListener(
+"change",
+updateTotal
+);
+
+quantity.addEventListener(
+"input",
+updateTotal
+);
+
+
+/* ================= UPI PAYMENT ================= */
+
+function payNow(){
+
+let price =
+Number(
+product
+.options[
+product.selectedIndex
+]
+.dataset.price
+);
+
+let qty =
+Math.max(
+1,
+Number(quantity.value)||1
+);
+
+let amount =
+price*qty;
+
+let upi =
+"upi://pay?pa=9024853012-1@naviaxis"+
+"&pn=KAUSHLYA%20DEVI"+
+"&am="+amount+
+"&cu=INR";
+
+window.location.href=upi;
+
+}
+
+
+/* ================= WHATSAPP ORDER ================= */
+
+function whatsappOrder(){
+
+let name =
+document
+.getElementById("name")
+.value.trim();
+
+let mobile =
+document
+.getElementById("mobile")
+.value.trim();
+
+let address =
+document
+.getElementById("address")
+.value.trim();
+
+let opt =
+product.options[
+product.selectedIndex
+];
+
+let item =
+opt.value;
+
+let price =
+Number(opt.dataset.price);
+
+let unit =
+opt.dataset.unit;
+
+let qty =
+Math.max(
+1,
+Number(quantity.value)||1
+);
+
+let amount =
+(price*qty)
+.toLocaleString("en-IN");
+
+
+if(
+!name ||
+!mobile ||
+!address
+){
+
+alert(
+"Please Name, Mobile Number aur Address bharein."
+);
+
+return;
+
+}
+
+
+let message =
+"Namaste Golu Dairy!%0A%0A"+
+"New Order:%0A"+
+"Name: "+
+encodeURIComponent(name)+
+"%0A"+
+"Mobile: "+
+encodeURIComponent(mobile)+
+"%0A"+
+"Product: "+
+encodeURIComponent(item)+
+"%0A"+
+"Quantity: "+
+qty+
+" "+
+unit+
+"%0A"+
+"Total: ₹"+
+amount+
+"%0A"+
+"Address: "+
+encodeURIComponent(address);
+
+
+window.open(
+"https://wa.me/919024853012?text="+
+message,
+"_blank"
+);
+
+}
+
+
+/* ================= CLOSE LOGIN ON OUTSIDE CLICK ================= */
+
+document
+.getElementById("loginModal")
+.addEventListener(
+"click",
+function(e){
+
+if(e.target === this){
+closeLogin();
+}
+
+});
+
+
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+="
